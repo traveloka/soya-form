@@ -1,0 +1,42 @@
+{
+  "name": "soya-form",
+  "version": "0.0.1",
+  "description": "Form library for soya",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src -d lib",
+    "clean": "rimraf lib",
+    "coverage": "jest --coverage",
+    "coveralls": "yarn run coverage && cat ./coverage/lcov.info | coveralls",
+    "prepublish": "yarn run clean && yarn run build",
+    "test": "jest",
+    "watch": "yarn run build -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/traveloka/soya-form.git"
+  },
+  "keywords": [
+    "react",
+    "soya",
+    "form",
+    "redux"
+  ],
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "coveralls": "^2.13.1",
+    "jest": "^20.0.4",
+    "rimraf": "^2.6.1"
+  },
+  "peerDependencies": {
+    "react": "^15.5.4",
+    "redux": "^3.6.0"
+  }
+}

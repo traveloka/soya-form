@@ -1,0 +1,1910 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`form reducers should handle ADD_ERRORS_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [
+            "Error 3",
+            "Error 4",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+        "foo": Object {
+          "errorMessages": Array [
+            "Error 1",
+            "Error 2",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle ADD_ERRORS_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [
+            "Error 3",
+            "Error 4",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+        "foo": Object {
+          "errorMessages": Array [
+            "Error 1",
+            "Error 2",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [
+            "Error 3",
+            "Error 4",
+            "Error 5",
+            "Error 6",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+        "foo": Object {
+          "errorMessages": Array [
+            "Error 1",
+            "Error 2",
+            "Error 3",
+            "Error 4",
+            "Error 5",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle ADD_LIST_ITEM_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle ADD_LIST_ITEM_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle ADD_LIST_ITEM_ACTION_TYPE 3`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle ADD_LIST_ITEM_ACTION_TYPE 4`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle ADD_LIST_ITEM_ACTION_TYPE 5`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle ADD_LIST_ITEM_WITH_VALUE_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+        ],
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle ADD_LIST_ITEM_WITH_VALUE_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+        ],
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+        ],
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle CLEAR_ERRORS_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [
+            "Error 3",
+            "Error 4",
+            "Error 5",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+        "foo": Object {
+          "errorMessages": Array [
+            "Error 1",
+            "Error 2",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [
+            "Error 3",
+            "Error 4",
+            "Error 5",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle CLEAR_ERRORS_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [
+            "Error 3",
+            "Error 4",
+            "Error 5",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle CLEAR_FIELD_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": null,
+        },
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle CLEAR_FIELD_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle CLEAR_FORM_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": null,
+        },
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle MERGE_FIELDS_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle MERGE_FIELDS_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [
+            "Error 1",
+            "Error 2",
+          ],
+          "isEnabled": false,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello World",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle REMOVE_LIST_ITEM_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+        "foo": Array [],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle REMOVE_LIST_ITEM_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": false,
+            "value": null,
+          },
+        ],
+        "foo": Array [],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Array [],
+        "foo": Array [],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle REORDER_LIST_ITEM_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle REORDER_LIST_ITEM_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle REORDER_LIST_ITEM_DEC_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle REORDER_LIST_ITEM_DEC_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle REORDER_LIST_ITEM_INC_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle REORDER_LIST_ITEM_INC_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Array [
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "olleH",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "Hello",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "dlroW",
+          },
+          Object {
+            "errorMessages": Array [],
+            "isEnabled": true,
+            "isValidating": false,
+            "touched": true,
+            "value": "World",
+          },
+        ],
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_DEFAULT_VALUE_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_DEFAULT_VALUE_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_DEFAULT_VALUES_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "dlroW",
+        },
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_DEFAULT_VALUES_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "dlroW",
+        },
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "dlroW",
+        },
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_ENABLED_STATE_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {
+    "simpleForm": Object {
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_ENABLED_STATE_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "isEnabled": false,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_ERRORS_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [
+            "Error 1",
+            "Error 2",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_ERRORS_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [
+            "Error 1",
+            "Error 2",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [
+            "Error 3",
+            "Error 4",
+            "Error 5",
+          ],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_IS_SUBMITTING_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {
+    "simpleForm": Object {
+      "isEnabled": true,
+      "isSubmitting": true,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_IS_SUBMITTING_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "isEnabled": true,
+      "isSubmitting": true,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_IS_VALIDATING_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": true,
+          "touched": true,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_IS_VALIDATING_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": true,
+          "touched": true,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": null,
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_VALUE_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_VALUE_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello World",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_VALUE_ACTION_TYPE 3`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello World",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello World",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_VALUE_ACTION_TYPE 4`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello World",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello World",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_VALUES_ACTION_TYPE 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "dlroW",
+        },
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should handle SET_VALUES_ACTION_TYPE 2`] = `
+Object {
+  "_previousState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "dlroW",
+        },
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+  "currentState": Object {
+    "simpleForm": Object {
+      "fields": Object {
+        "bar": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "dlroW olleH",
+        },
+        "foo": Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": true,
+          "value": "Hello World",
+        },
+      },
+      "isEnabled": true,
+      "isSubmitting": false,
+    },
+  },
+}
+`;
+
+exports[`form reducers should return initial state 1`] = `
+Object {
+  "_previousState": undefined,
+  "currentState": Object {},
+}
+`;
+
+exports[`form reducers should throw error on inconsistent field 1`] = `"\\"form.addListItem\\" action expected an array state, got object"`;
+
+exports[`form reducers should throw error on inconsistent field 2`] = `"\\"bar\\" field expected an object state, got array"`;
+
+exports[`form reducers should throw error on inconsistent field 3`] = `"Unable to perform \\"form.setValue\\" action for \\"foo.bar.oof\\" field, \\"bar\\" is a field"`;

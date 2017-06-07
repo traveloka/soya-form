@@ -1,0 +1,15 @@
+# IDE
+.idea
+
+# build output
+.next
+lib
+
+# dependencies
+node_modules
+
+# coverage
+coverage
+
+# logs
+*.log
