@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`repeatable container should create 3 repeatable components 1`] = `
+<div>
+  <Repeatable
+    addListItem={[Function]}
+    form={
+      Object {
+        "addErrors": [Function],
+        "clearErrors": [Function],
+        "clearForm": [Function],
+        "disable": [Function],
+        "disableField": [Function],
+        "disableFields": [Function],
+        "enable": [Function],
+        "enableField": [Function],
+        "enableFields": [Function],
+        "getFormId": [Function],
+        "lockSubmission": [Function],
+        "regField": [Function],
+        "setDefaultValue": [Function],
+        "setDefaultValues": [Function],
+        "setErrors": [Function],
+        "setValue": [Function],
+        "setValues": [Function],
+        "submit": [Function],
+        "unlockSubmission": [Function],
+        "unregField": [Function],
+        "validateAll": [Function],
+      }
+    }
+    index={0}
+    length={3}
+    minLength={0}
+    name={[Function]}
+    removeListItem={[Function]}
+    reorderListItem={[Function]}
+    reorderListItemDec={[Function]}
+    reorderListItemInc={[Function]}
+    totalItem={3}
+  />
+  <Repeatable
+    addListItem={[Function]}
+    form={
+      Object {
+        "addErrors": [Function],
+        "clearErrors": [Function],
+        "clearForm": [Function],
+        "disable": [Function],
+        "disableField": [Function],
+        "disableFields": [Function],
+        "enable": [Function],
+        "enableField": [Function],
+        "enableFields": [Function],
+        "getFormId": [Function],
+        "lockSubmission": [Function],
+        "regField": [Function],
+        "setDefaultValue": [Function],
+        "setDefaultValues": [Function],
+        "setErrors": [Function],
+        "setValue": [Function],
+        "setValues": [Function],
+        "submit": [Function],
+        "unlockSubmission": [Function],
+        "unregField": [Function],
+        "validateAll": [Function],
+      }
+    }
+    index={1}
+    length={3}
+    minLength={0}
+    name={[Function]}
+    removeListItem={[Function]}
+    reorderListItem={[Function]}
+    reorderListItemDec={[Function]}
+    reorderListItemInc={[Function]}
+    totalItem={3}
+  />
+  <Repeatable
+    addListItem={[Function]}
+    form={
+      Object {
+        "addErrors": [Function],
+        "clearErrors": [Function],
+        "clearForm": [Function],
+        "disable": [Function],
+        "disableField": [Function],
+        "disableFields": [Function],
+        "enable": [Function],
+        "enableField": [Function],
+        "enableFields": [Function],
+        "getFormId": [Function],
+        "lockSubmission": [Function],
+        "regField": [Function],
+        "setDefaultValue": [Function],
+        "setDefaultValues": [Function],
+        "setErrors": [Function],
+        "setValue": [Function],
+        "setValues": [Function],
+        "submit": [Function],
+        "unlockSubmission": [Function],
+        "unregField": [Function],
+        "validateAll": [Function],
+      }
+    }
+    index={2}
+    length={3}
+    minLength={0}
+    name={[Function]}
+    removeListItem={[Function]}
+    reorderListItem={[Function]}
+    reorderListItemDec={[Function]}
+    reorderListItemInc={[Function]}
+    totalItem={3}
+  />
+</div>
+`;
