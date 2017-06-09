@@ -22,13 +22,15 @@ import {
 
 import {
   isArray,
+  isField,
+  getFieldNames,
   removeObject,
   updateArray,
   removeArray,
   moveArray,
 } from './_utils';
 
-const initialState = {
+export const initialState = {
   field: {
     errorMessages: [],
     isEnabled: true,
@@ -46,11 +48,6 @@ const initialState = {
   },
   forms: {},
 };
-
-const isField = (field) => (
-  typeof field === 'object' &&
-  Object.keys(initialState.field).every(prop => field.hasOwnProperty(prop))
-);
 
 const update = (reducer) => (state, action, fieldName) => {
   const newState = reducer(state[fieldName], action);
@@ -193,8 +190,8 @@ const arrayFields = createFields(initialState.fields.array);
 const objectFields = createFields(initialState.fields.object);
 
 const fields = (state, action) => {
-  const fieldNames = action.fieldName && (isArray(action.fieldName) ? action.fieldName : [action.fieldName]);
-  if (!fieldNames || fieldNames.length === 0) {
+  const fieldNames = getFieldNames(action.fieldName);
+  if (fieldNames.length === 0) {
     return state;
   }
   const fieldName = fieldNames[0];

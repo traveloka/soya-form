@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils createGetName 1`] = `
+Array [
+  "foo",
+  "bar",
+  0,
+]
+`;
+
+exports[`utils createGetName 2`] = `
+Array [
+  "foo",
+  "bar",
+  0,
+  0,
+]
+`;
+
+exports[`utils createValidate 1`] = `
+Array [
+  "Error 1",
+  Object {},
+]
+`;
+
+exports[`utils createValidateAsync 1`] = `
+Array [
+  "Error 1",
+  Object {},
+]
+`;
+
+exports[`utils getDisplayName 1`] = `"Prefix(Component)"`;
+
+exports[`utils getFieldNames 1`] = `Array []`;
+
+exports[`utils getFieldNames 2`] = `
+Array [
+  "foo",
+]
+`;
+
+exports[`utils getFieldNames 3`] = `
+Array [
+  "foo",
+  "bar",
+]
+`;
+
+exports[`utils moveArray 1`] = `
+Array [
+  2,
+  4,
+  1,
+]
+`;
+
+exports[`utils moveArray 2`] = `
+Array [
+  1,
+  2,
+  4,
+]
+`;
+
+exports[`utils moveArray 3`] = `
+Array [
+  1,
+  2,
+  3,
+]
+`;
+
+exports[`utils removeArray 1`] = `
+Array [
+  1,
+  2,
+  4,
+]
+`;
+
+exports[`utils removeArray 2`] = `
+Array [
+  1,
+  2,
+]
+`;
+
+exports[`utils removeArray 3`] = `
+Array [
+  1,
+  2,
+  3,
+]
+`;
+
+exports[`utils removeObject 1`] = `
+Object {
+  "b": 2,
+}
+`;
+
+exports[`utils updateArray 1`] = `
+Array [
+  1,
+  2,
+  4,
+]
+`;
+
+exports[`utils updateArray 2`] = `
+Array [
+  1,
+  2,
+  3,
+]
+`;
+
+exports[`utils updateArray 3`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+]
+`;
