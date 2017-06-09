@@ -1,0 +1,504 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`form should dispatch an action to add error messages 1`] = `
+Object {
+  "errorMessages": Array [
+    "foo",
+  ],
+  "formId": "simpleForm",
+  "type": "form.addErrors",
+}
+`;
+
+exports[`form should dispatch an action to add error messages 2`] = `
+Object {
+  "errorMessages": Array [
+    "foo",
+    "bar",
+  ],
+  "formId": "simpleForm",
+  "type": "form.addErrors",
+}
+`;
+
+exports[`form should dispatch an action to clear error messages 1`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": "foo",
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.clearErrors",
+}
+`;
+
+exports[`form should dispatch an action to clear error messages 2`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": "foo",
+    },
+    Object {
+      "fieldName": "bar",
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.clearErrors",
+}
+`;
+
+exports[`form should dispatch an action to clear form 1`] = `
+Object {
+  "formId": "simpleForm",
+  "type": "form.clearForm",
+}
+`;
+
+exports[`form should dispatch an action to disable field 1`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+      ],
+      "object": Object {
+        "isEnabled": false,
+      },
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.mergeFields",
+}
+`;
+
+exports[`form should dispatch an action to disable field 2`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+        "bar",
+      ],
+      "object": Object {
+        "isEnabled": false,
+      },
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.mergeFields",
+}
+`;
+
+exports[`form should dispatch an action to disable fields 1`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+      ],
+      "object": Object {
+        "isEnabled": false,
+      },
+    },
+    Object {
+      "fieldName": Array [
+        "bar",
+      ],
+      "object": Object {
+        "isEnabled": false,
+      },
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.mergeFields",
+}
+`;
+
+exports[`form should dispatch an action to disable fields 2`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+        "bar",
+      ],
+      "object": Object {
+        "isEnabled": false,
+      },
+    },
+    Object {
+      "fieldName": Array [
+        "oof",
+        "rab",
+      ],
+      "object": Object {
+        "isEnabled": false,
+      },
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.mergeFields",
+}
+`;
+
+exports[`form should dispatch an action to disable form 1`] = `
+Object {
+  "formId": "simpleForm",
+  "isEnabled": false,
+  "type": "form.setEnabledState",
+}
+`;
+
+exports[`form should dispatch an action to enable field 1`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+      ],
+      "object": Object {
+        "isEnabled": true,
+      },
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.mergeFields",
+}
+`;
+
+exports[`form should dispatch an action to enable field 2`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+        "bar",
+      ],
+      "object": Object {
+        "isEnabled": true,
+      },
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.mergeFields",
+}
+`;
+
+exports[`form should dispatch an action to enable fields 1`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+      ],
+      "object": Object {
+        "isEnabled": true,
+      },
+    },
+    Object {
+      "fieldName": Array [
+        "bar",
+      ],
+      "object": Object {
+        "isEnabled": true,
+      },
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.mergeFields",
+}
+`;
+
+exports[`form should dispatch an action to enable fields 2`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+        "bar",
+      ],
+      "object": Object {
+        "isEnabled": true,
+      },
+    },
+    Object {
+      "fieldName": Array [
+        "oof",
+        "rab",
+      ],
+      "object": Object {
+        "isEnabled": true,
+      },
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.mergeFields",
+}
+`;
+
+exports[`form should dispatch an action to enable form 1`] = `
+Object {
+  "formId": "simpleForm",
+  "isEnabled": true,
+  "type": "form.setEnabledState",
+}
+`;
+
+exports[`form should dispatch an action to lock submission 1`] = `
+Object {
+  "formId": "simpleForm",
+  "isSubmitting": true,
+  "type": "form.setIsSubmitting",
+}
+`;
+
+exports[`form should dispatch an action to set default value 1`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+  ],
+  "formId": "simpleForm",
+  "type": "form.setDefaultValue",
+  "value": "Hello",
+}
+`;
+
+exports[`form should dispatch an action to set default value 2`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+    "bar",
+  ],
+  "formId": "simpleForm",
+  "type": "form.setDefaultValue",
+  "value": "Hello World",
+}
+`;
+
+exports[`form should dispatch an action to set default values 1`] = `
+Object {
+  "formId": "simpleForm",
+  "type": "form.setDefaultValues",
+  "values": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+      ],
+      "value": "Hello",
+    },
+    Object {
+      "fieldName": Array [
+        "foo",
+        "bar",
+      ],
+      "value": "Hello World",
+    },
+  ],
+}
+`;
+
+exports[`form should dispatch an action to set error messages 1`] = `
+Object {
+  "errorMessages": Array [
+    "Error 1",
+    "Error 2",
+  ],
+  "fieldName": Array [
+    "foo",
+  ],
+  "formId": "simpleForm",
+  "type": "form.setErrors",
+}
+`;
+
+exports[`form should dispatch an action to set error messages 2`] = `
+Object {
+  "errorMessages": Array [
+    "Error 1",
+    "Error 2",
+  ],
+  "fieldName": Array [
+    "foo",
+    "bar",
+  ],
+  "formId": "simpleForm",
+  "type": "form.setErrors",
+}
+`;
+
+exports[`form should dispatch an action to set value 1`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+  ],
+  "formId": "simpleForm",
+  "type": "form.setValue",
+  "value": "Hello",
+}
+`;
+
+exports[`form should dispatch an action to set value 2`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+    "bar",
+  ],
+  "formId": "simpleForm",
+  "type": "form.setValue",
+  "value": "Hello World",
+}
+`;
+
+exports[`form should dispatch an action to set values 1`] = `
+Object {
+  "formId": "simpleForm",
+  "type": "form.setValues",
+  "values": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+      ],
+      "value": "Hello",
+    },
+    Object {
+      "fieldName": Array [
+        "foo",
+        "bar",
+      ],
+      "value": "Hello World",
+    },
+  ],
+}
+`;
+
+exports[`form should dispatch an action to unlock submission 1`] = `
+Object {
+  "formId": "simpleForm",
+  "isSubmitting": false,
+  "type": "form.setIsSubmitting",
+}
+`;
+
+exports[`form should register a field 1`] = `
+Object {
+  "fieldNames": Array [
+    Array [
+      "foo",
+    ],
+  ],
+  "fields": Object {
+    "foo": Object {
+      "validateAll": [Function],
+    },
+  },
+}
+`;
+
+exports[`form should submit the form with submission and validation callback 1`] = `
+Object {
+  "isValid": true,
+  "values": Object {
+    "foo": Object {
+      "bar": "Value 1",
+      "oof": Array [
+        "Value 2",
+      ],
+    },
+  },
+}
+`;
+
+exports[`form should submit the form with submission and validation callback 2`] = `
+Object {
+  "isValid": false,
+  "values": Object {
+    "foo": Object {
+      "bar": "Value 1",
+      "oof": Array [
+        "Value 2",
+      ],
+    },
+  },
+}
+`;
+
+exports[`form should submit the form with submission callback 1`] = `
+Object {
+  "isValid": false,
+  "values": Object {
+    "foo": Object {
+      "bar": "Value 1",
+      "oof": Array [
+        "Value 2",
+      ],
+    },
+  },
+}
+`;
+
+exports[`form should throw on form submission error 1`] = `[Error: Form validation error]`;
+
+exports[`form should throw on form submission error 2`] = `[Error: Form submission error]`;
+
+exports[`form should throw on validations error 1`] = `[Error: Field is required]`;
+
+exports[`form should unregister a field 1`] = `
+Object {
+  "_previous": Object {
+    "fieldNames": Array [
+      Array [
+        "foo",
+      ],
+      Array [
+        "bar",
+      ],
+    ],
+    "fields": Object {
+      "bar": Object {
+        "validateAll": [Function],
+      },
+      "foo": Object {
+        "validateAll": [Function],
+      },
+    },
+  },
+  "current": Object {
+    "fieldNames": Array [
+      Array [
+        "bar",
+      ],
+    ],
+    "fields": Object {
+      "bar": Object {
+        "validateAll": [Function],
+      },
+    },
+  },
+}
+`;
+
+exports[`form should validate all registered fields 1`] = `
+Object {
+  "isValid": true,
+  "values": Object {
+    "foo": Object {
+      "bar": "Value 1",
+      "oof": Array [
+        "Value 2",
+      ],
+    },
+  },
+}
+`;
+
+exports[`form should validate all registered fields 2`] = `
+Object {
+  "isValid": true,
+  "values": Array [
+    Object {
+      "foo": "Value 1",
+    },
+  ],
+}
+`;

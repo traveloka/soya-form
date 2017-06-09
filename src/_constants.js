@@ -1,10 +1,5 @@
-const DEFAULT_FIELD = {
-  value: null,
-  touched: false,
-  errorMessages: [],
-  isEnabled: true,
-  isValidating: false
-};
+export const STATE_NAME = '__soyaForm';
+export const CONTEXT_NAME = '__soyaForm';
 
 const ID = 'form';
 export const SET_DEFAULT_VALUE_ACTION_TYPE = `${ID}.setDefaultValue`;
