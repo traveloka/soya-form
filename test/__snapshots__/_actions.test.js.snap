@@ -1,0 +1,463 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`form actions should create an action to add error messages 1`] = `
+Object {
+  "errorMessages": Array [
+    Object {
+      "errorMessages": Array [
+        "Error 1",
+        "Error 2",
+      ],
+      "fieldName": Array [
+        "foo",
+      ],
+    },
+    Object {
+      "errorMessages": Array [
+        "Error 1",
+        "Error 2",
+        "Error 3",
+      ],
+      "fieldName": Array [
+        "foo",
+        "bar",
+      ],
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.addErrors",
+}
+`;
+
+exports[`form actions should create an action to add list item 1`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+  ],
+  "formId": "simpleForm",
+  "maxLength": undefined,
+  "minLength": undefined,
+  "type": "form.addListItem",
+}
+`;
+
+exports[`form actions should create an action to add list item 2`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+    "bar",
+  ],
+  "formId": "simpleForm",
+  "maxLength": undefined,
+  "minLength": 1,
+  "type": "form.addListItem",
+}
+`;
+
+exports[`form actions should create an action to add list item 3`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+    "bar",
+    0,
+  ],
+  "formId": "simpleForm",
+  "maxLength": 5,
+  "minLength": 3,
+  "type": "form.addListItem",
+}
+`;
+
+exports[`form actions should create an action to add list item with value 1`] = `
+Object {
+  "formId": "simpleForm",
+  "type": "form.addListItemWithValue",
+  "values": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+        "bar",
+      ],
+      "value": "Hello World",
+    },
+  ],
+}
+`;
+
+exports[`form actions should create an action to add list item with value 2`] = `
+Object {
+  "formId": "simpleForm",
+  "type": "form.addListItemWithValue",
+  "values": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+        "bar",
+        "oof",
+      ],
+      "value": "dlroW olleH",
+    },
+  ],
+}
+`;
+
+exports[`form actions should create an action to clear error messages 1`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": "foo",
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.clearErrors",
+}
+`;
+
+exports[`form actions should create an action to clear error messages 2`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": "foo",
+    },
+    Object {
+      "fieldName": "bar",
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.clearErrors",
+}
+`;
+
+exports[`form actions should create an action to clear field 1`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+  ],
+  "formId": "simpleForm",
+  "type": "form.clearField",
+}
+`;
+
+exports[`form actions should create an action to clear field 2`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+    "bar",
+  ],
+  "formId": "simpleForm",
+  "type": "form.clearField",
+}
+`;
+
+exports[`form actions should create an action to clear form 1`] = `
+Object {
+  "formId": "simpleForm",
+  "type": "form.clearForm",
+}
+`;
+
+exports[`form actions should create an action to disable form 1`] = `
+Object {
+  "formId": "simpleForm",
+  "isEnabled": false,
+  "type": "form.setEnabledState",
+}
+`;
+
+exports[`form actions should create an action to enable form 1`] = `
+Object {
+  "formId": "simpleForm",
+  "isEnabled": true,
+  "type": "form.setEnabledState",
+}
+`;
+
+exports[`form actions should create an action to lock form submission 1`] = `
+Object {
+  "formId": "simpleForm",
+  "isSubmitting": true,
+  "type": "form.setIsSubmitting",
+}
+`;
+
+exports[`form actions should create an action to merge fields 1`] = `
+Object {
+  "fields": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+      ],
+      "object": Object {
+        "errorMessages": Array [],
+        "isEnabled": true,
+        "isValidating": false,
+        "touched": true,
+        "value": "Hello",
+      },
+    },
+  ],
+  "formId": "simpleForm",
+  "type": "form.mergeFields",
+}
+`;
+
+exports[`form actions should create an action to remove list item 1`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+    0,
+  ],
+  "formId": "simpleForm",
+  "type": "form.removeListItem",
+}
+`;
+
+exports[`form actions should create an action to remove list item 2`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+    "bar",
+    0,
+  ],
+  "formId": "simpleForm",
+  "type": "form.removeListItem",
+}
+`;
+
+exports[`form actions should create an action to reorder list item 1`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+    0,
+  ],
+  "formId": "simpleForm",
+  "targetIndex": 1,
+  "type": "form.reorderListItem",
+}
+`;
+
+exports[`form actions should create an action to reorder list item 2`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+    "bar",
+    0,
+  ],
+  "formId": "simpleForm",
+  "targetIndex": 1,
+  "type": "form.reorderListItem",
+}
+`;
+
+exports[`form actions should create an action to reorder list item decrementally 1`] = `
+Object {
+  "amount": 1,
+  "fieldName": Array [
+    "foo",
+    0,
+  ],
+  "formId": "simpleForm",
+  "type": "form.reorderItemDec",
+}
+`;
+
+exports[`form actions should create an action to reorder list item decrementally 2`] = `
+Object {
+  "amount": 2,
+  "fieldName": Array [
+    "foo",
+    0,
+  ],
+  "formId": "simpleForm",
+  "type": "form.reorderItemDec",
+}
+`;
+
+exports[`form actions should create an action to reorder list item decrementally 3`] = `
+Object {
+  "amount": 2,
+  "fieldName": Array [
+    "foo",
+    "bar",
+    0,
+  ],
+  "formId": "simpleForm",
+  "type": "form.reorderItemDec",
+}
+`;
+
+exports[`form actions should create an action to reorder list item incrementally 1`] = `
+Object {
+  "amount": 1,
+  "fieldName": Array [
+    "foo",
+    0,
+  ],
+  "formId": "simpleForm",
+  "type": "form.reorderItemInc",
+}
+`;
+
+exports[`form actions should create an action to reorder list item incrementally 2`] = `
+Object {
+  "amount": 2,
+  "fieldName": Array [
+    "foo",
+    0,
+  ],
+  "formId": "simpleForm",
+  "type": "form.reorderItemInc",
+}
+`;
+
+exports[`form actions should create an action to reorder list item incrementally 3`] = `
+Object {
+  "amount": 2,
+  "fieldName": Array [
+    "foo",
+    "bar",
+    0,
+  ],
+  "formId": "simpleForm",
+  "type": "form.reorderItemInc",
+}
+`;
+
+exports[`form actions should create an action to set default value 1`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+  ],
+  "formId": "simpleForm",
+  "type": "form.setDefaultValue",
+  "value": "Hello",
+}
+`;
+
+exports[`form actions should create an action to set default value 2`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+    "bar",
+  ],
+  "formId": "simpleForm",
+  "type": "form.setDefaultValue",
+  "value": "Hello World",
+}
+`;
+
+exports[`form actions should create an action to set default values 1`] = `
+Object {
+  "formId": "simpleForm",
+  "type": "form.setDefaultValues",
+  "values": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+      ],
+      "value": "Hello",
+    },
+    Object {
+      "fieldName": Array [
+        "foo",
+        "bar",
+      ],
+      "value": "Hello World",
+    },
+  ],
+}
+`;
+
+exports[`form actions should create an action to set error messages 1`] = `
+Object {
+  "errorMessages": Array [
+    "Error 1",
+    "Error 2",
+  ],
+  "fieldName": Array [
+    "foo",
+  ],
+  "formId": "simpleForm",
+  "type": "form.setErrors",
+}
+`;
+
+exports[`form actions should create an action to set error messages 2`] = `
+Object {
+  "errorMessages": Array [
+    "Error 1",
+    "Error 2",
+    "Error 3",
+  ],
+  "fieldName": Array [
+    "foo",
+    "bar",
+  ],
+  "formId": "simpleForm",
+  "type": "form.setErrors",
+}
+`;
+
+exports[`form actions should create an action to set is validating form 1`] = `
+Object {
+  "formId": "simpleForm",
+  "map": Object {
+    "bar": true,
+    "foo": false,
+  },
+  "type": "form.setIsValidating",
+}
+`;
+
+exports[`form actions should create an action to set value 1`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+  ],
+  "formId": "simpleForm",
+  "type": "form.setValue",
+  "value": "Hello",
+}
+`;
+
+exports[`form actions should create an action to set value 2`] = `
+Object {
+  "fieldName": Array [
+    "foo",
+    "bar",
+  ],
+  "formId": "simpleForm",
+  "type": "form.setValue",
+  "value": "Hello World",
+}
+`;
+
+exports[`form actions should create an action to set values 1`] = `
+Object {
+  "formId": "simpleForm",
+  "type": "form.setValues",
+  "values": Array [
+    Object {
+      "fieldName": Array [
+        "foo",
+      ],
+      "value": "Hello",
+    },
+    Object {
+      "fieldName": Array [
+        "foo",
+        "bar",
+      ],
+      "value": "Hello World",
+    },
+  ],
+}
+`;
+
+exports[`form actions should create an action to unlock form submission 1`] = `
+Object {
+  "formId": "simpleForm",
+  "isSubmitting": false,
+  "type": "form.setIsSubmitting",
+}
+`;

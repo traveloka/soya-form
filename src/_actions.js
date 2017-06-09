@@ -113,8 +113,10 @@ export const addListItem = (formId, fieldName, minLength, maxLength) => ({
 export const addListItemWithValue = (formId, fieldName, values) => ({
   type: ADD_LIST_ITEM_WITH_VALUE_ACTION_TYPE,
   formId,
-  fieldName,
-  values,
+  values: values.map(value => ({
+    ...value,
+    fieldName: fieldName.concat(value.fieldName),
+  })),
 });
 
 export const removeListItem = (formId, fieldName, index) => ({
