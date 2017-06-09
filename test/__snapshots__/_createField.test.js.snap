@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`field container should create field component 1`] = `
+<Field
+  errorMessages={Array []}
+  form={
+    Object {
+      "addErrors": [Function],
+      "clearErrors": [Function],
+      "clearForm": [Function],
+      "disable": [Function],
+      "disableField": [Function],
+      "disableFields": [Function],
+      "enable": [Function],
+      "enableField": [Function],
+      "enableFields": [Function],
+      "getFormId": [Function],
+      "lockSubmission": [Function],
+      "regField": [Function],
+      "setDefaultValue": [Function],
+      "setDefaultValues": [Function],
+      "setErrors": [Function],
+      "setValue": [Function],
+      "setValues": [Function],
+      "submit": [Function],
+      "unlockSubmission": [Function],
+      "unregField": [Function],
+      "validateAll": [Function],
+    }
+  }
+  handleAsyncValidation={undefined}
+  handleChange={undefined}
+  isDisabled={false}
+  isFieldEnabled={false}
+  isFormEnabled={false}
+  isFormSubmitting={false}
+  isValidating={false}
+  name={
+    Array [
+      "foo",
+    ]
+  }
+  registerAsyncValidators={[Function]}
+  registerChangeValidators={[Function]}
+  registerSubmitValidators={[Function]}
+  touched={false}
+/>
+`;
+
+exports[`field container should handle register async validators 1`] = `
+Array [
+  [Function],
+  [Function],
+  [Function],
+]
+`;
+
+exports[`field container should handle register change validators 1`] = `
+Array [
+  [Function],
+  [Function],
+  [Function],
+]
+`;
+
+exports[`field container should handle register submit validators 1`] = `
+Array [
+  [Function],
+  [Function],
+  [Function],
+]
+`;
+
+exports[`field container should register change, async, and submit validators on mount 1`] = `
+Array [
+  Array [
+    [Function],
+    [Function],
+    [Function],
+  ],
+  Array [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+]
+`;
+
+exports[`field container should register change, async, and submit validators on mount 2`] = `
+Object {
+  "__fieldNames": Array [
+    Array [
+      "foo",
+    ],
+  ],
+  "__fields": Object {
+    "foo": Object {
+      "validateAll": [Function],
+    },
+  },
+}
+`;
+
+exports[`field container should unregister validators on unmount 1`] = `
+Object {
+  "__fieldNames": Array [],
+  "__fields": Object {},
+}
+`;
