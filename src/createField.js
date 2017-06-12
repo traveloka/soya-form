@@ -1,7 +1,7 @@
 import React from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { applyReducers } from 'soya-next/lib/redux';
+import { applyReducers } from 'soya-next/redux';
 import reducers, { initialState } from './_reducers';
 import {
   addErrorMessages,
