@@ -3,7 +3,7 @@ import createField from './createField';
 import createRepeatable from './createRepeatable';
 import withForm from './withForm';
 
-export default {
+export {
   createForm,
   createField,
   createRepeatable,
