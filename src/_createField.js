@@ -1,8 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  CONTEXT_NAME,
-} from './_constants';
 import { formShape } from './_propTypes';
 import {
   getDisplayName,

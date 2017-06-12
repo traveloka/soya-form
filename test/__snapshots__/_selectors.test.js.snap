@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`simpleFormSelector should get the field 1`] = `
+Array [
+  Object {
+    "errorMessages": Array [],
+    "isEnabled": true,
+    "isValidating": false,
+    "touched": false,
+    "value": "value 1",
+  },
+  Object {
+    "errorMessages": Array [],
+    "isEnabled": true,
+    "isValidating": false,
+    "touched": false,
+    "value": "value 2",
+  },
+]
+`;
+
+exports[`simpleFormSelector should get the field 2`] = `null`;
+
+exports[`simpleFormSelector should get the field 3`] = `null`;
+
+exports[`simpleFormSelector should get the field length 1`] = `2`;
+
+exports[`simpleFormSelector should get the field length 2`] = `0`;
+
+exports[`simpleFormSelector should get the field value 1`] = `"value 1"`;
+
+exports[`simpleFormSelector should get the form 1`] = `Object {}`;
+
+exports[`simpleFormSelector should get the form 2`] = `
+Object {
+  "fields": Object {
+    "foo": Object {
+      "bar": Array [
+        Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": "value 1",
+        },
+        Object {
+          "errorMessages": Array [],
+          "isEnabled": true,
+          "isValidating": false,
+          "touched": false,
+          "value": "value 2",
+        },
+      ],
+    },
+  },
+  "isEnabled": false,
+  "isSubmitting": false,
+}
+`;
+
+exports[`simpleFormSelector should get the values 1`] = `null`;
+
+exports[`simpleFormSelector should get the values 2`] = `
+Object {
+  "foo": Object {
+    "bar": Array [
+      "value 1",
+      "value 2",
+    ],
+  },
+}
+`;
+
+exports[`simpleFormSelector should show whether the form has errors or not 1`] = `false`;
+
+exports[`simpleFormSelector should show whether the form has errors or not 2`] = `false`;
+
+exports[`simpleFormSelector should show whether the form is enabled or not 1`] = `false`;
+
+exports[`simpleFormSelector should show whether the form is locking submission or not 1`] = `false`;
