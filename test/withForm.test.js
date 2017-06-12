@@ -22,10 +22,23 @@ describe('with form', () => {
     }
   }
 
+  class Field extends React.Component {
+    render() {
+      return <div />;
+    }
+  }
+
   it('should receive the form in the context', () => {
-    const Field = withForm(() => <div />);
-    const tree = TestUtils.renderIntoDocument(<MockForm><Field /></MockForm>);
-    const field = TestUtils.findRenderedComponentWithType(tree, Field);
+    const FieldWithForm = withForm(Field);
+    const tree = TestUtils.renderIntoDocument(<MockForm><FieldWithForm /></MockForm>);
+    const field = TestUtils.findRenderedComponentWithType(tree, FieldWithForm);
     expect(field.context[CONTEXT_NAME].getFormId()).toBe('simpleForm');
+  });
+
+  it('should receive the form in the props', () => {
+    const FieldWithForm = withForm(Field);
+    const tree = TestUtils.renderIntoDocument(<MockForm><FieldWithForm /></MockForm>);
+    const field = TestUtils.findRenderedComponentWithType(tree, Field);
+    expect(field.props.form.getFormId()).toBe('simpleForm');
   });
 });

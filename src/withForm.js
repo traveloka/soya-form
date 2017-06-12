@@ -18,7 +18,7 @@ export default (Component) => class extends React.Component {
     return (
       <Component
         {...this.props}
-        form={this.props.form || this.context.form}
+        form={this.props.form || this.context[CONTEXT_NAME]}
       />
     );
   }
