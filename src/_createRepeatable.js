@@ -27,6 +27,16 @@ export default (Component) => {
       minLength: 0,
     };
 
+    addListItem = () => this.props.addListItem(this.props.name)();
+
+    removeListItem = (index) => this.props.removeListItem(this.props.name)(index);
+
+    reorderListItem = (index, targetIndex) => this.props.reorderListItem(this.props.name)(index, targetIndex);
+
+    reorderListItemDec = (index, amount) => this.props.reorderListItemDec(this.props.name)(index, amount);
+
+    reorderListItemInc = (index, amount) => this.props.reorderListItemInc(this.props.name)(index, amount);
+
     render() {
       return (
         <div>
@@ -37,6 +47,11 @@ export default (Component) => {
               key={index}
               name={createGetName(this.props.name, index)}
               totalItem={this.props.length}
+              addListItem={this.addListItem}
+              removeListItem={this.removeListItem}
+              reorderListItem={this.reorderListItem}
+              reorderListItemDec={this.reorderListItemDec}
+              reorderListItemInc={this.reorderListItemInc}
             />
           ))}
         </div>

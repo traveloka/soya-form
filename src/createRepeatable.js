@@ -47,19 +47,9 @@ const mapDispatchToProps = (dispatch, props) => ({
   },
 });
 
-const mergeProps = (stateProps, dispatchProps, props) => ({
-  ...props,
-  ...stateProps,
-  addListItem: dispatchProps.addListItem(stateProps.name),
-  removeListItem: dispatchProps.removeListItem(stateProps.name),
-  reorderListItem: dispatchProps.reorderListItem(stateProps.name),
-  reorderListItemDec: dispatchProps.reorderListItemDec(stateProps.name),
-  reorderListItemInc: dispatchProps.reorderListItemInc(stateProps.name),
-});
-
 export default compose(
   withForm,
   applyReducers({ [STATE_NAME]: reducers }),
-  connect(mapStateToProps, mapDispatchToProps, mergeProps),
+  connect(mapStateToProps, mapDispatchToProps),
   _createRepeatable,
 );
