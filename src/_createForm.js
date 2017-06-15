@@ -136,7 +136,7 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
 
 export const _createForm = __createForm({}, []);
 
-export default (Component) => {
+export default (formId) => (Component) => {
   class CreateForm extends React.Component {
     static displayName = getDisplayName('CreateForm', Component);
 
@@ -146,7 +146,7 @@ export default (Component) => {
 
     static propTypes = {
       dispatch: PropTypes.func.isRequired,
-      formId: PropTypes.string.isRequired,
+      formId: PropTypes.string,
     };
 
     getChildContext = () => ({
@@ -163,7 +163,7 @@ export default (Component) => {
       delete props.dispatch;
       delete props.formId;
       props.form = this.__form;
-      return <div><Component {...props} /></div>;
+      return <Component {...props} />;
     }
   }
   return CreateForm;

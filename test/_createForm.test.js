@@ -13,7 +13,7 @@ describe('form container', () => {
   }
 
   it('should receive the form in the props', () => {
-    const FormContainer = _createForm(Form);
+    const FormContainer = _createForm()(Form);
     const tree = TestUtils.renderIntoDocument(<FormContainer formId={formId} dispatch={dispatch} />);
     const form = TestUtils.findRenderedComponentWithType(tree, Form);
     expect(form.props.form.getFormId()).toBe(formId);
