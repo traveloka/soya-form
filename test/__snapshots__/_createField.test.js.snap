@@ -28,8 +28,8 @@ exports[`field container should create field component 1`] = `
       "validateAll": [Function],
     }
   }
-  handleAsyncValidation={undefined}
-  handleChange={undefined}
+  handleAsyncValidation={[Function]}
+  handleChange={[Function]}
   isDisabled={false}
   isFieldEnabled={false}
   isFormEnabled={false}
@@ -43,6 +43,7 @@ exports[`field container should create field component 1`] = `
   registerAsyncValidators={[Function]}
   registerChangeValidators={[Function]}
   registerSubmitValidators={[Function]}
+  setDefaultValue={[Function]}
   touched={false}
 />
 `;
@@ -89,22 +90,7 @@ Array [
 ]
 `;
 
-exports[`field container should register change, async, and submit validators on mount 2`] = `
-Object {
-  "__fieldNames": Array [
-    Array [
-      "foo",
-    ],
-  ],
-  "__fields": Object {
-    "foo": Object {
-      "validateAll": [Function],
-    },
-  },
-}
-`;
-
-exports[`field container should unregister validators on unmount 1`] = `
+exports[`field container should unregister change, async, and submit validators on unmount 1`] = `
 Object {
   "__fieldNames": Array [],
   "__fields": Object {},

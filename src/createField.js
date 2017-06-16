@@ -16,9 +16,7 @@ import {
 import createSelector from './_selectors';
 import {
   createValidate,
-  createValidateAsync,
   getFieldNames,
-  throwAndLogError,
 } from './_utils';
 import withForm from './withForm';
 import _createField from './_createField';
@@ -44,7 +42,21 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = (dispatch, props) => ({
-  dispatch,
+  mergeFields: (fieldNames) => (object) => {
+    dispatch(mergeFields(props.form.getFormId(), [{
+      fieldName: fieldNames,
+      object,
+    }]));
+  },
+  toggleLock: (fieldNames) => (shouldLock) => {
+    dispatch(setIsValidating(props.form.getFormId(), {[fieldNames]: shouldLock}))
+  },
+  addErrorMessages: (fieldNames) => (errorMessages) => {
+    dispatch(addErrorMessages(props.form.getFormId(), [{
+      fieldName: fieldNames,
+      errorMessages,
+    }]));
+  },
   setDefaultValue: (fieldNames) => (value) => {
     dispatch(setDefaultValue(props.form.getFormId(), fieldNames, value));
   },
@@ -63,79 +75,13 @@ const mapDispatchToProps = (dispatch, props) => ({
         },
       }]));
     }
-    props.changeHandlers.forEach((changeHandler) => changeHandler(value));
+    props.changeHandlers && props.changeHandlers.forEach((changeHandler) => changeHandler(value));
   },
 });
-
-const mergeProps = (stateProps, { dispatch, ...dispatchProps }, props) => {
-  const formId = props.form.getFormId();
-  const toggleLock = (shouldLock) => dispatch(setIsValidating(formId, { [stateProps.name]: shouldLock }));
-  const lock = () => toggleLock(true);
-  const unlock = () => toggleLock(false);
-  const resolveAsyncValidation = (errorMessages) => {
-    dispatch(addErrorMessages(formId, [{
-      fieldName: stateProps.name,
-      errorMessages,
-    }]));
-    unlock();
-    return errorMessages;
-  };
-  const rejectAsyncValidation = (error) => {
-    unlock();
-    throwAndLogError(error);
-  };
-
-  return {
-    ...props,
-    ...stateProps,
-    setDefaultValue: dispatchProps.setDefaultValue(stateProps.name),
-    createHandleChange: dispatchProps.createHandleChange(stateProps.name),
-    createHandleAsyncValidation: (validators, asyncValidators) => () => {
-      const errorMessages = createValidate(validators)(stateProps.value);
-      if (errorMessages.length > 0) {
-        return Promise.resolve(false);
-      }
-
-      if (asyncValidators.length === 0) {
-        return Promise.resolve(true);
-      }
-
-      lock();
-      return createValidateAsync(asyncValidators)(stateProps.value)
-        .then(resolveAsyncValidation)
-        .catch(rejectAsyncValidation);
-    },
-    createHandleValidateAll: (validators, asyncValidators) => () => {
-      const errorMessages = createValidate(validators)(stateProps.value);
-      const createResult = (isValid) => ({
-        isValid,
-        value: stateProps.value,
-        name: stateProps.name,
-      });
-      if (errorMessages.length > 0) {
-        dispatch(mergeFields(formId, {
-          fieldName: stateProps.name,
-          object: { errorMessages },
-        }));
-        return Promise.resolve(createResult(false));
-      }
-
-      if (asyncValidators.length === 0) {
-        return Promise.resolve(createResult(true));
-      }
-
-      lock();
-      return createValidateAsync(asyncValidators)(stateProps.value)
-        .then(resolveAsyncValidation)
-        .then((errorMessages) => createResult(errorMessages.length === 0))
-        .catch(rejectAsyncValidation);
-    },
-  };
-};
 
 export default compose(
   withForm,
   applyReducers({ [STATE_NAME]: reducers }),
-  connect(mapStateToProps, mapDispatchToProps, mergeProps),
+  connect(mapStateToProps, mapDispatchToProps),
   _createField
 );

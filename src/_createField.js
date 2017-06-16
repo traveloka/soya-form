@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { formShape } from './_propTypes';
 import {
+  createValidate,
+  createValidateAsync,
   getDisplayName,
+  throwAndLogError,
 } from './_utils';
 
 export default (Component) => {
@@ -20,13 +23,15 @@ export default (Component) => {
       isValidating: PropTypes.bool.isRequired,
       touched: PropTypes.bool.isRequired,
       value: PropTypes.any,
+      setDefaultValue: PropTypes.func.isRequired,
       changeHandlers: PropTypes.arrayOf(PropTypes.func),
       changeValidators: PropTypes.arrayOf(PropTypes.func),
       createHandleChange: PropTypes.func.isRequired,
       asyncValidators: PropTypes.arrayOf(PropTypes.func),
-      createHandleAsyncValidation: PropTypes.func.isRequired,
       submitValidators: PropTypes.arrayOf(PropTypes.func),
-      createHandleValidateAll: PropTypes.func.isRequired,
+      addErrorMessages: PropTypes.func.isRequired,
+      mergeFields: PropTypes.func.isRequired,
+      toggleLock: PropTypes.func.isRequired,
     };
 
     static defaultProps = {
@@ -45,7 +50,7 @@ export default (Component) => {
     }
 
     componentWillMount() {
-      const handleValidateAll = this.props.createHandleValidateAll([
+      const handleValidateAll = this.createHandleValidateAll([
         ...this.props.changeValidators,
         ...this.__changeValidators,
       ], [
@@ -61,6 +66,70 @@ export default (Component) => {
       this.__form.unregField(this.props.name);
     }
 
+    addErrorMessages = (errorMessages) => this.props.addErrorMessages(this.props.name)(errorMessages);
+
+    mergeFields = (object) => this.props.mergeFields(this.props.name)(object);
+
+    setDefaultValue = (value) => this.props.setDefaultValue(this.props.name)(value);
+
+    toggleLock = (shouldLock) => this.props.toggleLock(this.props.name)(shouldLock);
+
+    lock = () => this.toggleLock(true);
+
+    unlock = () => this.toggleLock(false);
+
+    resolveAsyncValidation = (errorMessages) => {
+      this.addErrorMessages(errorMessages);
+      this.unlock();
+      return errorMessages;
+    };
+
+    rejectAsyncValidation = (error) => {
+      this.unlock();
+      throwAndLogError(error);
+    };
+
+    createHandleChange = (validators) => this.props.createHandleChange(this.props.name)(validators);
+
+    createHandleAsyncValidation = (validators, asyncValidators) => () => {
+      const errorMessages = createValidate(validators)(this.props.value);
+      if (errorMessages.length > 0) {
+        return Promise.resolve(false);
+      }
+
+      if (asyncValidators.length === 0) {
+        return Promise.resolve(true);
+      }
+
+      this.lock();
+      return createValidateAsync(asyncValidators)(this.props.value)
+        .then(this.resolveAsyncValidation)
+        .catch(this.rejectAsyncValidation);
+    };
+
+    createHandleValidateAll = (validators, asyncValidators) => () => {
+      const errorMessages = createValidate(validators)(this.props.value);
+      const createResult = (isValid) => ({
+        isValid,
+        value: this.props.value,
+        name: this.props.name,
+      });
+      if (errorMessages.length > 0) {
+        this.mergeFields({errorMessages});
+        return Promise.resolve(createResult(false));
+      }
+
+      if (asyncValidators.length === 0) {
+        return Promise.resolve(createResult(true));
+      }
+
+      this.lock();
+      return createValidateAsync(asyncValidators)(this.props.value)
+        .then(this.resolveAsyncValidation)
+        .then((errorMessages) => createResult(errorMessages.length === 0))
+        .catch(this.rejectAsyncValidation);
+    };
+
     registerAsyncValidators(asyncValidators) {
       this.__asyncValidators = this.__asyncValidators.concat(asyncValidators);
     }
@@ -75,22 +144,25 @@ export default (Component) => {
 
     render() {
       const {
-        createHandleChange,
-        createHandleAsyncValidation,
         changeValidators,
         asyncValidators,
         ...props,
       } = this.props;
+      delete props.createHandleChange;
+      delete props.setDefaultValue;
       delete props.changeHandlers;
-      delete props.createHandleValidateAll;
       delete props.submitValidators;
+      delete props.addErrorMessages;
+      delete props.mergeFields;
+      delete props.toggleLock;
 
       const validators = [
         ...changeValidators,
         ...this.__changeValidators,
       ];
-      props.handleChange = createHandleChange(validators);
-      props.handleAsyncValidation = createHandleAsyncValidation(validators, [
+      props.setDefaultValue = this.setDefaultValue;
+      props.handleChange = this.createHandleChange(validators);
+      props.handleAsyncValidation = this.createHandleAsyncValidation(validators, [
         ...asyncValidators,
         ...this.__asyncValidators,
       ]);
