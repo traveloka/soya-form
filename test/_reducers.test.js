@@ -24,9 +24,9 @@ import reducers from '../src/_reducers';
 describe('form reducers', () => {
   let formId, currentState;
 
-  const reduceReducers = (actions) => actions.reduce((state, action) => reducers(state, action), undefined);
-  const testReducers = (actions) => {
-    actions.forEach((action) => {
+  const reduceReducers = actions => actions.reduce((state, action) => reducers(state, action), undefined);
+  const testReducers = actions => {
+    actions.forEach(action => {
       const _previousState = currentState;
       currentState = reducers(currentState, action);
       expect({
@@ -35,7 +35,7 @@ describe('form reducers', () => {
       }).toMatchSnapshot();
     });
   };
-  const testErrorReducers = (actions) => {
+  const testErrorReducers = actions => {
     expect(() => reduceReducers(actions)).toThrowErrorMatchingSnapshot();
   };
 
@@ -49,7 +49,7 @@ describe('form reducers', () => {
   });
 
   it('should handle SET_ENABLED_STATE_ACTION_TYPE', () => {
-    testReducers([true, false].map((isEnabled) => ({
+    testReducers([true, false].map(isEnabled => ({
       type: SET_ENABLED_STATE_ACTION_TYPE,
       formId,
       isEnabled,
@@ -57,7 +57,7 @@ describe('form reducers', () => {
   });
 
   it('should handle SET_IS_SUBMITTING_ACTION_TYPE', () => {
-    testReducers([true, false].map((isSubmitting) => ({
+    testReducers([true, false].map(isSubmitting => ({
       type: SET_IS_SUBMITTING_ACTION_TYPE,
       formId,
       isSubmitting,
@@ -69,7 +69,7 @@ describe('form reducers', () => {
       foo: true,
     }, {
       foo: false,
-    }].map((map) => ({
+    }].map(map => ({
       type: SET_IS_VALIDATING_ACTION_TYPE,
       formId,
       map,
@@ -85,7 +85,7 @@ describe('form reducers', () => {
           isEnabled: true,
           isValidating: false,
           touched: true,
-          value: "Hello",
+          value: 'Hello',
         },
       }],
     }, {
@@ -93,16 +93,16 @@ describe('form reducers', () => {
         fieldName: 'foo',
         object: {
           errorMessages: [
-            "Error 1",
-            "Error 2",
+            'Error 1',
+            'Error 2',
           ],
           isEnabled: false,
           isValidating: false,
           touched: true,
-          value: "Hello World",
+          value: 'Hello World',
         },
       }],
-    }].map((action) => ({
+    }].map(action => ({
       type: MERGE_FIELDS_ACTION_TYPE,
       formId,
       ...action,
@@ -121,7 +121,7 @@ describe('form reducers', () => {
       value: 'Hello World',
     }, {
       value: 'Hello World',
-    }].map((action) => ({
+    }].map(action => ({
       type: SET_VALUE_ACTION_TYPE,
       formId,
       ...action,
@@ -145,7 +145,7 @@ describe('form reducers', () => {
         fieldName: 'bar',
         value: 'dlroW olleH',
       }],
-    }].map((action) => ({
+    }].map(action => ({
       type: SET_VALUES_ACTION_TYPE,
       formId,
       ...action,
@@ -159,7 +159,7 @@ describe('form reducers', () => {
     }, {
       fieldName: 'foo',
       value: 'Hello World',
-    }].map((action) => ({
+    }].map(action => ({
       type: SET_DEFAULT_VALUE_ACTION_TYPE,
       formId,
       ...action,
@@ -183,7 +183,7 @@ describe('form reducers', () => {
         fieldName: 'bar',
         value: 'dlroW olleH',
       }],
-    }].map((action) => ({
+    }].map(action => ({
       type: SET_DEFAULT_VALUES_ACTION_TYPE,
       formId,
       ...action,
@@ -203,7 +203,7 @@ describe('form reducers', () => {
       fieldName: 'foo',
     }, {
       fieldName: 'bar',
-    }].map((action) => ({
+    }].map(action => ({
       type: CLEAR_FIELD_ACTION_TYPE,
       formId,
       ...action,
@@ -224,7 +224,7 @@ describe('form reducers', () => {
         'Error 4',
         'Error 5',
       ],
-    }].map((action) => ({
+    }].map(action => ({
       type: SET_ERRORS_ACTION_TYPE,
       formId,
       ...action,
@@ -261,7 +261,7 @@ describe('form reducers', () => {
           'Error 6',
         ],
       }],
-    }].map((action) => ({
+    }].map(action => ({
       type: ADD_ERRORS_ACTION_TYPE,
       formId,
       ...action,
@@ -282,7 +282,7 @@ describe('form reducers', () => {
         'Error 4',
         'Error 5',
       ],
-    }].map((action) => ({
+    }].map(action => ({
       type: SET_ERRORS_ACTION_TYPE,
       formId,
       ...action,
@@ -295,7 +295,7 @@ describe('form reducers', () => {
       fields: [{
         fieldName: 'bar',
       }],
-    }].map((action) => ({
+    }].map(action => ({
       type: CLEAR_ERRORS_ACTION_TYPE,
       formId,
       ...action,
@@ -331,7 +331,7 @@ describe('form reducers', () => {
     }, {
       fieldName: ['bar', 0],
       maxLength: 2,
-    }].map((action) => ({
+    }].map(action => ({
       type: ADD_LIST_ITEM_ACTION_TYPE,
       formId,
       ...action,
@@ -355,7 +355,7 @@ describe('form reducers', () => {
         fieldName: ['bar', 0],
         value: 'dlroW',
       }],
-    }].map((action) => ({
+    }].map(action => ({
       type: ADD_LIST_ITEM_WITH_VALUE_ACTION_TYPE,
       formId,
       ...action,
@@ -367,7 +367,7 @@ describe('form reducers', () => {
       fieldName: ['foo', 0],
     }, {
       fieldName: ['bar', 0],
-    }].map((action) => ({
+    }].map(action => ({
       type: ADD_LIST_ITEM_ACTION_TYPE,
       formId,
       ...action,
@@ -376,7 +376,7 @@ describe('form reducers', () => {
       fieldName: ['foo', 0],
     }, {
       fieldName: ['bar', 0],
-    }].map((action) => ({
+    }].map(action => ({
       type: REMOVE_LIST_ITEM_ACTION_TYPE,
       formId,
       ...action,
@@ -398,7 +398,7 @@ describe('form reducers', () => {
         fieldName: ['foo', 0],
         value: 'dlroW',
       }],
-    }].map((action) => ({
+    }].map(action => ({
       type: ADD_LIST_ITEM_WITH_VALUE_ACTION_TYPE,
       formId,
       ...action,
@@ -409,7 +409,7 @@ describe('form reducers', () => {
     }, {
       fieldName: ['foo', 3],
       targetIndex: 1,
-    }].map((action) => ({
+    }].map(action => ({
       type: REORDER_LIST_ITEM_ACTION_TYPE,
       formId,
       ...action,
@@ -431,7 +431,7 @@ describe('form reducers', () => {
         fieldName: ['foo', 0],
         value: 'dlroW',
       }],
-    }].map((action) => ({
+    }].map(action => ({
       type: ADD_LIST_ITEM_WITH_VALUE_ACTION_TYPE,
       formId,
       ...action,
@@ -442,7 +442,7 @@ describe('form reducers', () => {
     }, {
       fieldName: ['foo', 3],
       amount: 1,
-    }].map((action) => ({
+    }].map(action => ({
       type: REORDER_LIST_ITEM_DEC_ACTION_TYPE,
       formId,
       ...action,
@@ -464,7 +464,7 @@ describe('form reducers', () => {
         fieldName: ['foo', 0],
         value: 'dlroW',
       }],
-    }].map((action) => ({
+    }].map(action => ({
       type: ADD_LIST_ITEM_WITH_VALUE_ACTION_TYPE,
       formId,
       ...action,
@@ -475,7 +475,7 @@ describe('form reducers', () => {
     }, {
       fieldName: ['foo', 2],
       amount: 1,
-    }].map((action) => ({
+    }].map(action => ({
       type: REORDER_LIST_ITEM_INC_ACTION_TYPE,
       formId,
       ...action,
@@ -485,7 +485,7 @@ describe('form reducers', () => {
   it('should throw error on inconsistent field', () => {
     testErrorReducers([{
       fieldName: ['foo'],
-    }].map((action) => ({
+    }].map(action => ({
       type: ADD_LIST_ITEM_ACTION_TYPE,
       formId,
       ...action,
@@ -495,7 +495,7 @@ describe('form reducers', () => {
       fieldName: ['foo', 0],
     }, {
       fieldName: ['foo', 'bar'],
-    }].map((action) => ({
+    }].map(action => ({
       type: ADD_LIST_ITEM_ACTION_TYPE,
       formId,
       ...action,
@@ -507,7 +507,7 @@ describe('form reducers', () => {
     }, {
       fieldName: ['foo', 'bar', 'oof'],
       value: 'Hello',
-    }].map((action) => ({
+    }].map(action => ({
       type: SET_VALUE_ACTION_TYPE,
       formId,
       ...action,

@@ -5,7 +5,7 @@ import _createRepeatable from '../src/_createRepeatable';
 describe('repeatable container', () => {
   const reduceMockProps = (props, name) => ({
     ...props,
-    [name]: () => {},
+    [name]: jest.fn(),
   });
 
   class Repeatable extends React.Component {

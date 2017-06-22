@@ -54,7 +54,7 @@ describe('form actions', () => {
         isEnabled: true,
         isValidating: false,
         touched: true,
-        value: "Hello",
+        value: 'Hello',
       },
     }])).toMatchSnapshot();
   });
@@ -67,10 +67,10 @@ describe('form actions', () => {
   it('should create an action to set values', () => {
     expect(setValues(formId, [{
       fieldName: ['foo'],
-      value: 'Hello'
+      value: 'Hello',
     }, {
       fieldName: ['foo', 'bar'],
-      value: 'Hello World'
+      value: 'Hello World',
     }])).toMatchSnapshot();
   });
 
@@ -82,10 +82,10 @@ describe('form actions', () => {
   it('should create an action to set default values', () => {
     expect(setDefaultValues(formId, [{
       fieldName: ['foo'],
-      value: 'Hello'
+      value: 'Hello',
     }, {
       fieldName: ['foo', 'bar'],
-      value: 'Hello World'
+      value: 'Hello World',
     }])).toMatchSnapshot();
   });
 
@@ -127,11 +127,11 @@ describe('form actions', () => {
   it('should create an action to add list item with value', () => {
     expect(addListItemWithValue(formId, ['foo'], [{
       fieldName: ['bar'],
-      value: 'Hello World'
+      value: 'Hello World',
     }])).toMatchSnapshot();
     expect(addListItemWithValue(formId, ['foo', 'bar'], [{
       fieldName: ['oof'],
-      value: 'dlroW olleH'
+      value: 'dlroW olleH',
     }])).toMatchSnapshot();
   });
 

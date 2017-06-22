@@ -9,7 +9,7 @@ describe('field container', () => {
       return <div />;
     }
   }
-  const reduceMockProps = (value) => (props, name) => ({
+  const reduceMockProps = value => (props, name) => ({
     ...props,
     [name]: value,
   });
@@ -32,8 +32,8 @@ describe('field container', () => {
       'addErrorMessages',
       'mergeFields',
       'toggleLock',
-    ].reduce(reduceMockProps(() => () => {}), {}),
-    createHandleChange: () => () => () => {},
+    ].reduce(reduceMockProps(() => jest.fn()), {}),
+    createHandleChange: () => () => jest.fn(),
   };
 
   beforeEach(() => {
@@ -43,9 +43,9 @@ describe('field container', () => {
     props = {
       ...props,
       form: __createForm(fields, fieldNames)(formId, action => action),
-      asyncValidators: new Array(3).fill(() => {}),
-      changeValidators: new Array(3).fill(() => {}),
-      submitValidators: new Array(3).fill(() => {}),
+      asyncValidators: new Array(3).fill(jest.fn()),
+      changeValidators: new Array(3).fill(jest.fn()),
+      submitValidators: new Array(3).fill(jest.fn()),
     };
     renderer.render(<FieldContainer {...props} />);
   });
@@ -56,19 +56,19 @@ describe('field container', () => {
 
   it('should handle register async validators', () => {
     const fieldContainer = renderer.getMountedInstance();
-    fieldContainer.registerAsyncValidators(new Array(3).fill(() => {}));
+    fieldContainer.registerAsyncValidators(new Array(3).fill(jest.fn()));
     expect(fieldContainer.__asyncValidators).toMatchSnapshot();
   });
 
   it('should handle register change validators', () => {
     const fieldContainer = renderer.getMountedInstance();
-    fieldContainer.registerChangeValidators(new Array(3).fill(() => {}));
+    fieldContainer.registerChangeValidators(new Array(3).fill(jest.fn()));
     expect(fieldContainer.__changeValidators).toMatchSnapshot();
   });
 
   it('should handle register submit validators', () => {
     const fieldContainer = renderer.getMountedInstance();
-    fieldContainer.registerSubmitValidators(new Array(3).fill(() => {}));
+    fieldContainer.registerSubmitValidators(new Array(3).fill(jest.fn()));
     expect(fieldContainer.__submitValidators).toMatchSnapshot();
   });
 

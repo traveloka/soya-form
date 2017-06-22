@@ -1,11 +1,11 @@
 import { STATE_NAME } from './_constants';
 import { isArray, isField } from './_utils';
 
-const _getState = (state) => state[STATE_NAME];
+const _getState = state => state[STATE_NAME];
 
 const _getForm = (state, formId) => () => _getState(state)[formId] || {};
 
-const _getValues = (field) => {
+const _getValues = field => {
   if (!field) {
     return null;
   }
@@ -22,7 +22,7 @@ const _getValues = (field) => {
   return values;
 };
 
-const _hasErrors = (field) => {
+const _hasErrors = field => {
   if (!field) {
     return false;
   }
@@ -30,17 +30,17 @@ const _hasErrors = (field) => {
     return field.errorMessages.length > 0;
   }
   if (isArray(field)) {
-    return field.some((field) => _hasErrors(field));
+    return field.some(field => _hasErrors(field));
   }
   const fieldNames = Object.keys(field);
-  return fieldNames.some((name) => _hasErrors(field[name]));
+  return fieldNames.some(name => _hasErrors(field[name]));
 };
 
 export default (state, formId) => {
   const getForm = _getForm(state, formId);
   const getFields = () => getForm().fields || null;
 
-  const getField = (fieldNames) => {
+  const getField = fieldNames => {
     let field = getFields();
     if (!field) {
       return null;
@@ -57,12 +57,12 @@ export default (state, formId) => {
   return {
     getValues: () => _getValues(getFields()),
     getField,
-    getFieldValue: (fieldNames) => {
+    getFieldValue: fieldNames => {
       const field = getField(fieldNames);
       return field && field.value;
     },
     getForm,
-    getLength: (fieldNames) => {
+    getLength: fieldNames => {
       const field = getField(fieldNames);
       if (!field) {
         return 0;

@@ -96,7 +96,7 @@ export const clearErrorMessages = (formId, fieldNames) => ({
   fields: fieldNames.map(fieldName => ({ fieldName })),
 });
 
-export const clear = (formId) => ({
+export const clear = formId => ({
   type: CLEAR_FORM_ACTION_TYPE,
   formId,
 });

@@ -70,6 +70,7 @@ describe('utils', () => {
   });
 
   it('getDisplayName', () => {
+    // eslint-disable-next-line no-empty-function
     expect(getDisplayName('Prefix', () => {})).toMatchSnapshot();
   });
 
@@ -94,5 +95,5 @@ describe('utils', () => {
   it('createGetName', () => {
     expect(createGetName(['foo', 'bar'], 0)()).toMatchSnapshot();
     expect(createGetName(['foo', 'bar'], 0)(0)).toMatchSnapshot();
-  })
+  });
 });

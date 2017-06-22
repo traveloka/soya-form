@@ -6,15 +6,15 @@ import {
   getDisplayName,
 } from './_utils';
 
-export default (Component) => {
+export default Component => {
   class CreateRepeatable extends React.Component {
     static displayName = getDisplayName('CreateRepeatable', Component);
 
     static propTypes = {
-      form: formShape.isRequired,
+      form: formShape.isRequired, // eslint-disable-line react/no-unused-prop-types
       length: PropTypes.number.isRequired,
-      maxLength: PropTypes.number,
-      minLength: PropTypes.number,
+      maxLength: PropTypes.number, // eslint-disable-line react/no-unused-prop-types
+      minLength: PropTypes.number, // eslint-disable-line react/no-unused-prop-types
       name: PropTypes.arrayOf(PropTypes.string).isRequired,
       addListItem: PropTypes.func.isRequired,
       removeListItem: PropTypes.func.isRequired,
@@ -29,7 +29,7 @@ export default (Component) => {
 
     addListItem = () => this.props.addListItem(this.props.name)();
 
-    removeListItem = (index) => this.props.removeListItem(this.props.name)(index);
+    removeListItem = index => this.props.removeListItem(this.props.name)(index);
 
     reorderListItem = (index, targetIndex) => this.props.reorderListItem(this.props.name)(index, targetIndex);
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { applyReducers } from 'soya-next/redux';
@@ -42,25 +41,25 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = (dispatch, props) => ({
-  mergeFields: (fieldNames) => (object) => {
+  mergeFields: fieldNames => object => {
     dispatch(mergeFields(props.form.getFormId(), [{
       fieldName: fieldNames,
       object,
     }]));
   },
-  toggleLock: (fieldNames) => (shouldLock) => {
-    dispatch(setIsValidating(props.form.getFormId(), {[fieldNames]: shouldLock}))
+  toggleLock: fieldNames => shouldLock => {
+    dispatch(setIsValidating(props.form.getFormId(), { [fieldNames]: shouldLock }));
   },
-  addErrorMessages: (fieldNames) => (errorMessages) => {
+  addErrorMessages: fieldNames => errorMessages => {
     dispatch(addErrorMessages(props.form.getFormId(), [{
       fieldName: fieldNames,
       errorMessages,
     }]));
   },
-  setDefaultValue: (fieldNames) => (value) => {
+  setDefaultValue: fieldNames => value => {
     dispatch(setDefaultValue(props.form.getFormId(), fieldNames, value));
   },
-  createHandleChange: (fieldNames) => (validators) => (value) => {
+  createHandleChange: fieldNames => validators => value => {
     const formId = props.form.getFormId();
     const errorMessages = createValidate(validators)(value);
     if (errorMessages.length === 0) {
@@ -75,7 +74,7 @@ const mapDispatchToProps = (dispatch, props) => ({
         },
       }]));
     }
-    props.changeHandlers && props.changeHandlers.forEach((changeHandler) => changeHandler(value));
+    props.changeHandlers && props.changeHandlers.forEach(changeHandler => changeHandler(value));
   },
 });
 

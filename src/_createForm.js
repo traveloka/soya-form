@@ -23,7 +23,7 @@ import {
 export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
   const __fields = fields;
   const __fieldNames = fieldNames;
-  const actionCreators  = {
+  const actionCreators = {
     lockSubmission: () => setFormIsSubmittingState(formId, true),
     unlockSubmission: () => setFormIsSubmittingState(formId, false),
     disable: () => setFormEnabledState(formId, false),
@@ -32,24 +32,24 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
       return this.disableFields([fieldName]);
     },
     enableField(fieldName) {
-      return this.enableFields([fieldName])
+      return this.enableFields([fieldName]);
     },
-    disableFields: (fieldNames) => mergeFields(formId, fieldNames.map((fieldName) => ({
+    disableFields: fieldNames => mergeFields(formId, fieldNames.map(fieldName => ({
       fieldName,
       object: { isEnabled: false },
     }))),
-    enableFields: (fieldNames) => mergeFields(formId, fieldNames.map((fieldName) => ({
+    enableFields: fieldNames => mergeFields(formId, fieldNames.map(fieldName => ({
       fieldName,
       object: { isEnabled: true },
     }))),
     setValue: (fieldName, value) => setValue(formId, fieldName, value),
-    setValues: (values) => setValues(formId, values),
+    setValues: values => setValues(formId, values),
     setDefaultValue: (fieldName, value) => setDefaultValue(formId, fieldName, value),
-    setDefaultValues: (values) => setDefaultValues(formId, values),
+    setDefaultValues: values => setDefaultValues(formId, values),
     setErrors: (fieldName, errorMessages) => setErrorMessages(formId, fieldName, errorMessages),
-    addErrors: (errorMessages) => addErrorMessages(formId, errorMessages),
+    addErrors: errorMessages => addErrorMessages(formId, errorMessages),
     clearForm: () => clear(formId),
-    clearErrors: (fieldNames) => clearErrorMessages(formId, fieldNames),
+    clearErrors: fieldNames => clearErrorMessages(formId, fieldNames),
   };
 
   return {
@@ -62,11 +62,11 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
       __fields[fieldNames] = { validateAll };
       __fieldNames.push(fieldNames);
     },
-    unregField: (fieldNames) => {
+    unregField: fieldNames => {
       delete __fields[fieldNames];
       const index = __fieldNames.findIndex(
-        (__fieldNames) => __fieldNames.some((__fieldName) => (
-          fieldNames.some((fieldName) => __fieldName === fieldName)
+        __fieldNames => __fieldNames.some(__fieldName => (
+          fieldNames.some(fieldName => __fieldName === fieldName)
         ))
       );
       if (index !== -1) {
@@ -74,9 +74,9 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
       }
     },
     validateAll: () => {
-      const promises = Object.keys(__fields).map((fieldName) => __fields[fieldName].validateAll());
+      const promises = Object.keys(__fields).map(fieldName => __fields[fieldName].validateAll());
       return Promise.all(promises)
-        .then((results) => {
+        .then(results => {
           let values = {};
           if (
             results.length > 0 &&
@@ -107,36 +107,36 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
     submit(submitFunc, validationFunc) {
       dispatch(clearErrorMessages(formId, __fieldNames));
       return this.validateAll()
-        .then((result) => {
+        .then(result => {
           if (!result.isValid || !validationFunc) {
             submitFunc(result);
             return;
           }
 
           return Promise.resolve(validationFunc(result.values))
-            .then((validationResult) => {
+            .then(validationResult => {
               if (typeof validationResult === 'object' && !validationResult.isValid) {
                 dispatch(addErrorMessages(formId, validationResult.errorMessages));
                 result.isValid = false;
               }
               submitFunc(result);
             })
-            .catch((error) => {
+            .catch(error => {
               result.isValid = false;
               submitFunc(result);
               throwAndLogError(error);
             });
         })
-        .catch((error) => {
+        .catch(error => {
           throwAndLogError(error);
         });
     },
-  }
+  };
 };
 
 export const _createForm = __createForm({}, []);
 
-export default (formId) => (Component) => {
+export default formId => Component => {
   class CreateForm extends React.Component {
     static displayName = getDisplayName('CreateForm', Component);
 

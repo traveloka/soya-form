@@ -1,7 +1,7 @@
 import { initialState } from './_reducers';
 
-export const isArray = Array.isArray && ((value) => Object.prototype.toString.call(value) === '[object Array]');
-export const isField = (field) => (
+export const isArray = Array.isArray && (value => Object.prototype.toString.call(value) === '[object Array]');
+export const isField = field => (
   typeof field === 'object' &&
   Object.keys(initialState.field).every(prop => field.hasOwnProperty(prop))
 );
@@ -49,7 +49,7 @@ export const moveArray = (array, index, target) => {
   ];
 };
 
-export const getFieldNames = (fieldName) => {
+export const getFieldNames = fieldName => {
   if (fieldName !== 0 && !fieldName) {
     return [];
   }
@@ -58,11 +58,11 @@ export const getFieldNames = (fieldName) => {
 
 export const getDisplayName = (prefix, Component) => `${prefix}(${Component.displayName || Component.name || 'Component'})`;
 
-const isValidErrorMessage = (errorMessage) => (
+const isValidErrorMessage = errorMessage => (
   ['string', 'object'].indexOf(typeof errorMessage) !== -1
 );
 
-export const createValidate = (validators) => (value) => {
+export const createValidate = validators => value => {
   const errorMessages = [];
   for (const validator of validators) {
     const errorMessage = validator(value);
@@ -75,13 +75,13 @@ export const createValidate = (validators) => (value) => {
   return errorMessages;
 };
 
-export const createValidateAsync = (validators) => (value) => {
+export const createValidateAsync = validators => value => {
   const promises = [];
   for (const validator of validators) {
     promises.push(validator(value));
   }
   return Promise.all(promises)
-    .then((results) => {
+    .then(results => {
       const errorMessages = [];
       for (const result of results) {
         if (result === null) {
@@ -94,21 +94,23 @@ export const createValidateAsync = (validators) => (value) => {
     });
 };
 
-export const throwAndLogError = (error) => {
+export const throwAndLogError = error => {
   /* istanbul ignore next */
   if (process.env.NODE_ENV === 'development') {
     if (console) {
+      /* eslint-disable no-console */
       if (console.error) {
         console.error(error);
       } else {
         console.log(error, error.stack);
       }
+      /* eslint-enable no-console */
     }
   }
   throw error;
 };
 
-export const createGetName = (names, index) => (name) => {
+export const createGetName = (names, index) => name => {
   const fieldNames = names.concat(index);
   if (!name && name !== 0) {
     return fieldNames;

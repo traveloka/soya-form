@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TestUtils from 'react-dom/test-utils';
 import { formShape } from '../src/_propTypes';
 import { CONTEXT_NAME } from '../src/_constants';
@@ -11,9 +12,13 @@ describe('with form', () => {
       [CONTEXT_NAME]: formShape.isRequired,
     };
 
+    static propTypes = {
+      children: PropTypes.node.isRequired,
+    };
+
     getChildContext() {
       return {
-        [CONTEXT_NAME]: _createForm('simpleForm', () => {}),
+        [CONTEXT_NAME]: _createForm('simpleForm', jest.fn()),
       };
     }
 
@@ -22,6 +27,7 @@ describe('with form', () => {
     }
   }
 
+  // eslint-disable-next-line react/no-multi-comp
   class Field extends React.Component {
     render() {
       return <div />;

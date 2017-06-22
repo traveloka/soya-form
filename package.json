@@ -12,6 +12,9 @@
     "clean": "rimraf lib",
     "coverage": "jest --coverage",
     "coveralls": "yarn run coverage && cat ./coverage/lcov.info | coveralls",
+    "lint": "marlint",
+    "lint:fix": "yarn run lint -- --fix",
+    "precommit": "lint-staged",
     "prepublish": "yarn run clean && yarn run build",
     "test": "jest",
     "watch": "yarn run build -- -w"
@@ -35,7 +38,10 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "coveralls": "^2.13.1",
+    "husky": "^0.14.0",
     "jest": "^20.0.4",
+    "lint-staged": "^4.0.0",
+    "marlint": "^5.0.2",
     "react": "^15.6.1",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
@@ -46,5 +52,24 @@
     "react-redux": "^5.0.5",
     "redux": "^3.7.0",
     "soya-next": "^0.0.5"
+  },
+  "lint-staged": {
+    "*.js": [
+      "lint:fix",
+      "git add"
+    ]
+  },
+  "marlint": {
+    "envs": [
+      "browser",
+      "es6",
+      "jest",
+      "node"
+    ],
+    "ignores": [
+      "**/coverage/**",
+      "**/lib/**",
+      "**/node_modules/**"
+    ]
   }
 }

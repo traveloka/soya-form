@@ -8,7 +8,7 @@ import {
   throwAndLogError,
 } from './_utils';
 
-export default (Component) => {
+export default Component => {
   class CreateField extends React.Component {
     static displayName = getDisplayName('CreateField', Component);
 
@@ -22,7 +22,7 @@ export default (Component) => {
       isFieldEnabled: PropTypes.bool.isRequired,
       isValidating: PropTypes.bool.isRequired,
       touched: PropTypes.bool.isRequired,
-      value: PropTypes.any,
+      value: PropTypes.any, // eslint-disable-line react/forbid-prop-types
       setDefaultValue: PropTypes.func.isRequired,
       changeHandlers: PropTypes.arrayOf(PropTypes.func),
       changeValidators: PropTypes.arrayOf(PropTypes.func),
@@ -66,30 +66,30 @@ export default (Component) => {
       this.__form.unregField(this.props.name);
     }
 
-    addErrorMessages = (errorMessages) => this.props.addErrorMessages(this.props.name)(errorMessages);
+    addErrorMessages = errorMessages => this.props.addErrorMessages(this.props.name)(errorMessages);
 
-    mergeFields = (object) => this.props.mergeFields(this.props.name)(object);
+    mergeFields = object => this.props.mergeFields(this.props.name)(object);
 
-    setDefaultValue = (value) => this.props.setDefaultValue(this.props.name)(value);
+    setDefaultValue = value => this.props.setDefaultValue(this.props.name)(value);
 
-    toggleLock = (shouldLock) => this.props.toggleLock(this.props.name)(shouldLock);
+    toggleLock = shouldLock => this.props.toggleLock(this.props.name)(shouldLock);
 
     lock = () => this.toggleLock(true);
 
     unlock = () => this.toggleLock(false);
 
-    resolveAsyncValidation = (errorMessages) => {
+    resolveAsyncValidation = errorMessages => {
       this.addErrorMessages(errorMessages);
       this.unlock();
       return errorMessages;
     };
 
-    rejectAsyncValidation = (error) => {
+    rejectAsyncValidation = error => {
       this.unlock();
       throwAndLogError(error);
     };
 
-    createHandleChange = (validators) => this.props.createHandleChange(this.props.name)(validators);
+    createHandleChange = validators => this.props.createHandleChange(this.props.name)(validators);
 
     createHandleAsyncValidation = (validators, asyncValidators) => () => {
       const errorMessages = createValidate(validators)(this.props.value);
@@ -109,13 +109,13 @@ export default (Component) => {
 
     createHandleValidateAll = (validators, asyncValidators) => () => {
       const errorMessages = createValidate(validators)(this.props.value);
-      const createResult = (isValid) => ({
+      const createResult = isValid => ({
         isValid,
         value: this.props.value,
         name: this.props.name,
       });
       if (errorMessages.length > 0) {
-        this.mergeFields({errorMessages});
+        this.mergeFields({ errorMessages });
         return Promise.resolve(createResult(false));
       }
 
@@ -126,7 +126,7 @@ export default (Component) => {
       this.lock();
       return createValidateAsync(asyncValidators)(this.props.value)
         .then(this.resolveAsyncValidation)
-        .then((errorMessages) => createResult(errorMessages.length === 0))
+        .then(errorMessages => createResult(errorMessages.length === 0))
         .catch(this.rejectAsyncValidation);
     };
 
@@ -146,7 +146,7 @@ export default (Component) => {
       const {
         changeValidators,
         asyncValidators,
-        ...props,
+        ...props
       } = this.props;
       delete props.createHandleChange;
       delete props.setDefaultValue;

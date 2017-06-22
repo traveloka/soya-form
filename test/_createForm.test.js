@@ -115,7 +115,7 @@ describe('form', () => {
   });
 
   it('should register a field', () => {
-    form.regField(['foo'], () => {});
+    form.regField(['foo'], jest.fn());
     expect({
       fields,
       fieldNames,
@@ -123,11 +123,11 @@ describe('form', () => {
   });
 
   it('should unregister a field', () => {
-    form.regField(['foo'], () => {});
-    form.regField(['bar'], () => {});
+    form.regField(['foo'], jest.fn());
+    form.regField(['bar'], jest.fn());
     const _previous = {
       fields: { ...fields },
-      fieldNames: [ ...fieldNames ],
+      fieldNames: [...fieldNames],
     };
     form.unregField(['foo']);
     form.unregField(['foo']);
@@ -183,8 +183,8 @@ describe('form', () => {
       value: 'Value 2',
       name: ['foo', 'oof', 0],
     }));
-    await form.submit((result) => {
-      expect(result).toMatchSnapshot()
+    await form.submit(result => {
+      expect(result).toMatchSnapshot();
     });
   });
 
@@ -201,9 +201,9 @@ describe('form', () => {
     }));
     const validationFunc1 = jest.fn();
     await form.submit(
-      (result) => {
+      result => {
         expect(validationFunc1.mock.calls.length).toBe(1);
-        expect(result).toMatchSnapshot()
+        expect(result).toMatchSnapshot();
       },
       validationFunc1
     );
@@ -212,9 +212,9 @@ describe('form', () => {
       errorMessages: ['Field must be a number'],
     }));
     await form.submit(
-      (result) => {
+      result => {
         expect(validationFunc2.mock.calls.length).toBe(1);
-        expect(result).toMatchSnapshot()
+        expect(result).toMatchSnapshot();
       },
       validationFunc2
     );

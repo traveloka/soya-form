@@ -49,7 +49,7 @@ export const initialState = {
   forms: {},
 };
 
-const update = (reducer) => (state, action, fieldName) => {
+const update = reducer => (state, action, fieldName) => {
   const newState = reducer(state[fieldName], action);
   if (isArray(state)) {
     return updateArray(state, newState, fieldName);
@@ -124,12 +124,13 @@ const addField = (state, action) => {
 };
 const updateField = (state, action) => update(field)(state, action, action.fieldName);
 
-const createFields = (initialState) => (state = initialState, action) => {
+const createFields = initialState => (state = initialState, action) => {
   const fieldName = action.fieldName[0];
   if (action.fieldName.length > 1) {
     if (isField(state[fieldName])) {
       throw new Error(`Unable to perform "${action.type}" action for "${action.fieldNames}" field, "${fieldName}" is a field`);
     }
+    // eslint-disable-next-line no-use-before-define
     return updateFields(state, {
       ...action,
       fieldName: action.fieldName.slice(1),
@@ -145,6 +146,7 @@ const createFields = (initialState) => (state = initialState, action) => {
       case REORDER_LIST_ITEM_DEC_ACTION_TYPE:
       case REORDER_LIST_ITEM_INC_ACTION_TYPE:
         throw new Error(`"${action.type}" action expected an array state, got ${typeof state}`);
+      // no default
     }
   } else if (typeof fieldName !== 'number') {
     throw new Error(`"${fieldName}" field expected an object state, got array`);
@@ -183,6 +185,7 @@ const createFields = (initialState) => (state = initialState, action) => {
       return moveArray(state, fieldName, fieldName + newAction.amount);
     case REORDER_LIST_ITEM_ACTION_TYPE:
       return moveArray(state, fieldName, newAction.targetIndex);
+    // no default
   }
 };
 
@@ -236,14 +239,16 @@ const form = (state = initialState.form, action) => {
         isSubmitting: action.isSubmitting,
       };
     case CLEAR_FIELD_ACTION_TYPE:
-      const newState = fields(state.fields, action);
-      if (Object.keys(newState).length === 0) {
-        return removeObject(state, 'fields');
+      {
+        const newState = fields(state.fields, action);
+        if (Object.keys(newState).length === 0) {
+          return removeObject(state, 'fields');
+        }
+        return {
+          ...state,
+          fields: newState,
+        };
       }
-      return {
-        ...state,
-        fields: newState,
-      };
     case SET_DEFAULT_VALUE_ACTION_TYPE:
     case SET_VALUE_ACTION_TYPE:
     case SET_ERRORS_ACTION_TYPE:
@@ -270,6 +275,7 @@ const form = (state = initialState.form, action) => {
         ...removeObject(state, 'fields'),
         isEnabled: true,
       };
+    // no default
   }
 };
 

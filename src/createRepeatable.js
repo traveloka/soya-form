@@ -1,4 +1,3 @@
-import React from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { applyReducers } from 'soya-next/redux';
@@ -30,19 +29,19 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = (dispatch, props) => ({
-  addListItem: (fieldNames) => () => {
+  addListItem: fieldNames => () => {
     dispatch(addListItem(props.form.getFormId(), fieldNames, props.minLength, props.maxLength));
   },
-  removeListItem: (fieldNames) => (index) => {
+  removeListItem: fieldNames => index => {
     dispatch(removeListItem(props.form.getFormId(), fieldNames, index));
   },
-  reorderListItem: (fieldNames) => (index, targetIndex) => {
+  reorderListItem: fieldNames => (index, targetIndex) => {
     dispatch(reorderListItem(props.form.getFormId(), fieldNames, index, targetIndex));
   },
-  reorderListItemDec: (fieldNames) => (index, amount) => {
+  reorderListItemDec: fieldNames => (index, amount) => {
     dispatch(reorderListItemDec(props.form.getFormId(), fieldNames, index, amount));
   },
-  reorderListItemInc: (fieldNames) => (index, amount) => {
+  reorderListItemInc: fieldNames => (index, amount) => {
     dispatch(reorderListItemInc(props.form.getFormId(), fieldNames, index, amount));
   },
 });
