@@ -155,7 +155,7 @@ export default formId => Component => {
 
     constructor(props, context) {
       super(props, context);
-      this.__form = _createForm(props.formId, props.dispatch);
+      this.__form = _createForm(formId || props.formId, props.dispatch);
     }
 
     render() {
