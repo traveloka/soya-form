@@ -155,7 +155,11 @@ export default formId => Component => {
 
     constructor(props, context) {
       super(props, context);
-      this.__form = _createForm(formId || props.formId, props.dispatch);
+      let newFormId = formId || props.formId;
+      if (typeof newFormId === 'function') {
+        newFormId = newFormId(props);
+      }
+      this.__form = _createForm(newFormId, props.dispatch);
     }
 
     render() {
