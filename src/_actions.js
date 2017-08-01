@@ -18,6 +18,8 @@ import {
   REORDER_LIST_ITEM_ACTION_TYPE,
   REORDER_LIST_ITEM_DEC_ACTION_TYPE,
   REORDER_LIST_ITEM_INC_ACTION_TYPE,
+  INIT_FORM,
+  INIT_FIELD,
 } from './_constants';
 
 // Simple field related actions.
@@ -144,4 +146,15 @@ export const reorderListItem = (formId, fieldName, index, targetIndex) => ({
   formId,
   fieldName: fieldName.concat(index),
   targetIndex,
+});
+
+export const initForm = formId => ({
+  type: INIT_FORM,
+  formId,
+});
+
+export const initField = (formId, fieldName) => ({
+  type: INIT_FIELD,
+  formId,
+  fieldName,
 });

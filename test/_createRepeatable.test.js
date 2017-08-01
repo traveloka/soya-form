@@ -17,6 +17,7 @@ describe('repeatable container', () => {
   it('should create 3 repeatable components', () => {
     const RepeatableContainer = _createRepeatable(Repeatable);
     const props = {
+      init: jest.fn(),
       length: 3,
       name: ['foo'],
       form: {

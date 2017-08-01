@@ -107,13 +107,7 @@ Object {
     "simpleForm": Object {
       "fields": Object {
         "foo": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
         ],
       },
       "isEnabled": true,
@@ -129,13 +123,7 @@ Object {
     "simpleForm": Object {
       "fields": Object {
         "foo": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
         ],
       },
       "isEnabled": true,
@@ -146,20 +134,8 @@ Object {
     "simpleForm": Object {
       "fields": Object {
         "foo": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
+          undefined,
         ],
       },
       "isEnabled": true,
@@ -175,20 +151,8 @@ Object {
     "simpleForm": Object {
       "fields": Object {
         "foo": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
+          undefined,
         ],
       },
       "isEnabled": true,
@@ -199,43 +163,13 @@ Object {
     "simpleForm": Object {
       "fields": Object {
         "bar": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
+          undefined,
+          undefined,
         ],
         "foo": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
+          undefined,
         ],
       },
       "isEnabled": true,
@@ -251,43 +185,13 @@ Object {
     "simpleForm": Object {
       "fields": Object {
         "bar": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
+          undefined,
+          undefined,
         ],
         "foo": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
+          undefined,
         ],
       },
       "isEnabled": true,
@@ -298,43 +202,13 @@ Object {
     "simpleForm": Object {
       "fields": Object {
         "bar": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
+          undefined,
+          undefined,
         ],
         "foo": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
+          undefined,
         ],
       },
       "isEnabled": true,
@@ -350,43 +224,13 @@ Object {
     "simpleForm": Object {
       "fields": Object {
         "bar": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
+          undefined,
+          undefined,
         ],
         "foo": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
+          undefined,
         ],
       },
       "isEnabled": true,
@@ -397,36 +241,12 @@ Object {
     "simpleForm": Object {
       "fields": Object {
         "bar": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
+          undefined,
         ],
         "foo": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
+          undefined,
         ],
       },
       "isEnabled": true,
@@ -818,22 +638,10 @@ Object {
     "simpleForm": Object {
       "fields": Object {
         "bar": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
         ],
         "foo": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
         ],
       },
       "isEnabled": true,
@@ -844,13 +652,7 @@ Object {
     "simpleForm": Object {
       "fields": Object {
         "bar": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
         ],
         "foo": Array [],
       },
@@ -867,13 +669,7 @@ Object {
     "simpleForm": Object {
       "fields": Object {
         "bar": Array [
-          Object {
-            "errorMessages": Array [],
-            "isEnabled": true,
-            "isValidating": false,
-            "touched": false,
-            "value": null,
-          },
+          undefined,
         ],
         "foo": Array [],
       },

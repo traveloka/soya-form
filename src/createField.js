@@ -9,9 +9,6 @@ import {
   setIsValidating,
   setValue,
 } from './_actions';
-import {
-  STATE_NAME,
-} from './_constants';
 import createSelector from './_selectors';
 import {
   createValidate,
@@ -80,7 +77,7 @@ const mapDispatchToProps = (dispatch, props) => ({
 
 export default compose(
   withForm,
-  applyReducers({ [STATE_NAME]: reducers }),
+  applyReducers(reducers),
   connect(mapStateToProps, mapDispatchToProps),
   _createField
 );

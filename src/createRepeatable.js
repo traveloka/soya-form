@@ -9,7 +9,6 @@ import {
   reorderListItemDec,
   reorderListItemInc,
 } from './_actions';
-import { STATE_NAME } from './_constants';
 import createSelector from './_selectors';
 import {
   getFieldNames,
@@ -19,11 +18,12 @@ import _createRepeatable from './_createRepeatable';
 
 const mapStateToProps = (state, props) => {
   const fieldNames = getFieldNames(props.name);
-  const selector = createSelector(state);
-  const length = selector.getLength(props.form.getFormId(), fieldNames);
+  const selector = createSelector(state, props.form.getFormId());
+  const length = selector.getLength(fieldNames);
+  const minLength = props.minLength || 1;
 
   return {
-    length: length > props.minLength ? length : props.minLength,
+    length: length >= minLength ? length : minLength,
     name: fieldNames,
   };
 };
@@ -48,7 +48,7 @@ const mapDispatchToProps = (dispatch, props) => ({
 
 export default compose(
   withForm,
-  applyReducers({ [STATE_NAME]: reducers }),
+  applyReducers(reducers),
   connect(mapStateToProps, mapDispatchToProps),
   _createRepeatable,
 );

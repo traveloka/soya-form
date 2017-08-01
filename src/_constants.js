@@ -22,3 +22,5 @@ export const REMOVE_LIST_ITEM_ACTION_TYPE = `${ID}.removeListItem`;
 export const REORDER_LIST_ITEM_ACTION_TYPE = `${ID}.reorderListItem`;
 export const REORDER_LIST_ITEM_INC_ACTION_TYPE = `${ID}.reorderItemInc`;
 export const REORDER_LIST_ITEM_DEC_ACTION_TYPE = `${ID}.reorderItemDec`;
+export const INIT_FORM = `${ID}.INIT_FORM`;
+export const INIT_FIELD = `${ID}.INIT_FIELD`;

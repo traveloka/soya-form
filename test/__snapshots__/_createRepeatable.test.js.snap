@@ -30,6 +30,7 @@ exports[`repeatable container should create 3 repeatable components 1`] = `
       }
     }
     index={0}
+    init={[Function]}
     length={3}
     minLength={0}
     name={[Function]}
@@ -67,6 +68,7 @@ exports[`repeatable container should create 3 repeatable components 1`] = `
       }
     }
     index={1}
+    init={[Function]}
     length={3}
     minLength={0}
     name={[Function]}
@@ -104,6 +106,7 @@ exports[`repeatable container should create 3 repeatable components 1`] = `
       }
     }
     index={2}
+    init={[Function]}
     length={3}
     minLength={0}
     name={[Function]}

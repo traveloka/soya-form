@@ -42,14 +42,11 @@ export default (state, formId) => {
 
   const getField = fieldNames => {
     let field = getFields();
-    if (!field) {
-      return null;
-    }
     for (const fieldName of fieldNames) {
-      field = field[fieldName];
       if (!field) {
         return null;
       }
+      field = field[fieldName];
     }
     return field;
   };

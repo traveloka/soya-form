@@ -19,7 +19,7 @@ Array [
 ]
 `;
 
-exports[`simpleFormSelector should get the field 2`] = `null`;
+exports[`simpleFormSelector should get the field 2`] = `undefined`;
 
 exports[`simpleFormSelector should get the field 3`] = `null`;
 

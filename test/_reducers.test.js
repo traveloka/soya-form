@@ -18,17 +18,19 @@ import {
   REORDER_LIST_ITEM_ACTION_TYPE,
   REORDER_LIST_ITEM_DEC_ACTION_TYPE,
   REORDER_LIST_ITEM_INC_ACTION_TYPE,
+  STATE_NAME,
 } from '../src/_constants';
 import reducers from '../src/_reducers';
 
 describe('form reducers', () => {
   let formId, currentState;
 
-  const reduceReducers = actions => actions.reduce((state, action) => reducers(state, action), undefined);
+  const reducer = reducers[STATE_NAME];
+  const reduceReducers = actions => actions.reduce((state, action) => reducer(state, action), undefined);
   const testReducers = actions => {
     actions.forEach(action => {
       const _previousState = currentState;
-      currentState = reducers(currentState, action);
+      currentState = reducer(currentState, action);
       expect({
         _previousState,
         currentState,

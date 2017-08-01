@@ -14,7 +14,10 @@ export default Component => {
 
     static propTypes = {
       form: formShape.isRequired,
-      name: PropTypes.arrayOf(PropTypes.string).isRequired,
+      name: PropTypes.arrayOf(PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+      ])).isRequired,
       isFormEnabled: PropTypes.bool.isRequired,
       isFormSubmitting: PropTypes.bool.isRequired,
       isDisabled: PropTypes.bool.isRequired,

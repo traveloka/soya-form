@@ -1,4 +1,5 @@
 import {
+  STATE_NAME,
   SET_ENABLED_STATE_ACTION_TYPE,
   SET_IS_SUBMITTING_ACTION_TYPE,
   SET_IS_VALIDATING_ACTION_TYPE,
@@ -18,6 +19,8 @@ import {
   REORDER_LIST_ITEM_ACTION_TYPE,
   REORDER_LIST_ITEM_DEC_ACTION_TYPE,
   REORDER_LIST_ITEM_INC_ACTION_TYPE,
+  INIT_FORM,
+  INIT_FIELD,
 } from './_constants';
 
 import {
@@ -77,10 +80,7 @@ const field = (state = initialState.field, action) => {
         return state;
       }
       return {
-        ...state,
-        errorMessages: [],
-        isEnabled: true,
-        isValidating: false,
+        ...initialState.field,
         touched: true,
         value: action.value,
       };
@@ -104,6 +104,8 @@ const field = (state = initialState.field, action) => {
         ...state,
         errorMessages: [],
       };
+    case ADD_LIST_ITEM_ACTION_TYPE:
+      return undefined;
     default:
       return state;
   }
@@ -124,7 +126,7 @@ const addField = (state, action) => {
 };
 const updateField = (state, action) => update(field)(state, action, action.fieldName);
 
-const createFields = initialState => (state = initialState, action) => {
+const createFields = _initialState => (state = _initialState, action) => {
   const fieldName = action.fieldName[0];
   if (action.fieldName.length > 1) {
     if (isField(state[fieldName])) {
@@ -168,6 +170,7 @@ const createFields = initialState => (state = initialState, action) => {
     case MERGE_FIELDS_ACTION_TYPE:
     case CLEAR_ERRORS_ACTION_TYPE:
       return updateField(state, newAction);
+    case INIT_FIELD:
     case SET_DEFAULT_VALUE_ACTION_TYPE:
     case SET_DEFAULT_VALUES_ACTION_TYPE:
       if (state[fieldName]) {
@@ -249,6 +252,7 @@ const form = (state = initialState.form, action) => {
           fields: newState,
         };
       }
+    case INIT_FIELD:
     case SET_DEFAULT_VALUE_ACTION_TYPE:
     case SET_VALUE_ACTION_TYPE:
     case SET_ERRORS_ACTION_TYPE:
@@ -275,36 +279,41 @@ const form = (state = initialState.form, action) => {
         ...removeObject(state, 'fields'),
         isEnabled: true,
       };
-    // no default
-  }
-};
-
-export default (state = initialState.forms, action) => {
-  switch (action.type) {
-    case SET_ENABLED_STATE_ACTION_TYPE:
-    case SET_IS_VALIDATING_ACTION_TYPE:
-    case SET_IS_SUBMITTING_ACTION_TYPE:
-    case SET_DEFAULT_VALUE_ACTION_TYPE:
-    case SET_DEFAULT_VALUES_ACTION_TYPE:
-    case SET_VALUE_ACTION_TYPE:
-    case SET_VALUES_ACTION_TYPE:
-    case CLEAR_FIELD_ACTION_TYPE:
-    case SET_ERRORS_ACTION_TYPE:
-    case ADD_ERRORS_ACTION_TYPE:
-    case MERGE_FIELDS_ACTION_TYPE:
-    case CLEAR_FORM_ACTION_TYPE:
-    case CLEAR_ERRORS_ACTION_TYPE:
-    case ADD_LIST_ITEM_ACTION_TYPE:
-    case ADD_LIST_ITEM_WITH_VALUE_ACTION_TYPE:
-    case REMOVE_LIST_ITEM_ACTION_TYPE:
-    case REORDER_LIST_ITEM_ACTION_TYPE:
-    case REORDER_LIST_ITEM_DEC_ACTION_TYPE:
-    case REORDER_LIST_ITEM_INC_ACTION_TYPE:
-      return {
-        ...state,
-        [action.formId]: form(state[action.formId], action),
-      };
     default:
       return state;
   }
+};
+
+export default {
+  [STATE_NAME](state = initialState.forms, action) {
+    switch (action.type) {
+      case SET_ENABLED_STATE_ACTION_TYPE:
+      case SET_IS_VALIDATING_ACTION_TYPE:
+      case SET_IS_SUBMITTING_ACTION_TYPE:
+      case SET_DEFAULT_VALUE_ACTION_TYPE:
+      case SET_DEFAULT_VALUES_ACTION_TYPE:
+      case SET_VALUE_ACTION_TYPE:
+      case SET_VALUES_ACTION_TYPE:
+      case CLEAR_FIELD_ACTION_TYPE:
+      case SET_ERRORS_ACTION_TYPE:
+      case ADD_ERRORS_ACTION_TYPE:
+      case MERGE_FIELDS_ACTION_TYPE:
+      case CLEAR_FORM_ACTION_TYPE:
+      case CLEAR_ERRORS_ACTION_TYPE:
+      case ADD_LIST_ITEM_ACTION_TYPE:
+      case ADD_LIST_ITEM_WITH_VALUE_ACTION_TYPE:
+      case REMOVE_LIST_ITEM_ACTION_TYPE:
+      case REORDER_LIST_ITEM_ACTION_TYPE:
+      case REORDER_LIST_ITEM_DEC_ACTION_TYPE:
+      case REORDER_LIST_ITEM_INC_ACTION_TYPE:
+      case INIT_FORM:
+      case INIT_FIELD:
+        return {
+          ...state,
+          [action.formId]: form(state[action.formId], action),
+        };
+      default:
+        return state;
+    }
+  },
 };

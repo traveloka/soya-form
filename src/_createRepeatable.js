@@ -15,19 +15,29 @@ export default Component => {
       length: PropTypes.number.isRequired,
       maxLength: PropTypes.number, // eslint-disable-line react/no-unused-prop-types
       minLength: PropTypes.number, // eslint-disable-line react/no-unused-prop-types
-      name: PropTypes.arrayOf(PropTypes.string).isRequired,
+      name: PropTypes.arrayOf(PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+      ])).isRequired,
       addListItem: PropTypes.func.isRequired,
       removeListItem: PropTypes.func.isRequired,
       reorderListItem: PropTypes.func.isRequired,
       reorderListItemDec: PropTypes.func.isRequired,
       reorderListItemInc: PropTypes.func.isRequired,
+      init: PropTypes.func.isRequired,
     };
 
     static defaultProps = {
       minLength: 0,
     };
 
-    addListItem = () => this.props.addListItem(this.props.name)();
+    addListItem = () => {
+      const names = this.props.name;
+      if (typeof names[names.length - 1] === 'string') {
+        names.push(names.length);
+      }
+      this.props.addListItem(names)();
+    };
 
     removeListItem = index => this.props.removeListItem(this.props.name)(index);
 

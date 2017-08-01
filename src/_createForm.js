@@ -12,6 +12,7 @@ import {
   setFormIsSubmittingState,
   setValue,
   setValues,
+  initField,
 } from './_actions';
 import { CONTEXT_NAME } from './_constants';
 import { formShape } from './_propTypes';
@@ -59,6 +60,7 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
     }), {}),
     getFormId: () => formId,
     regField: (fieldNames, validateAll) => {
+      dispatch(initField(formId, fieldNames));
       __fields[fieldNames] = { validateAll };
       __fieldNames.push(fieldNames);
     },
@@ -146,6 +148,7 @@ export default formId => Component => {
 
     static propTypes = {
       dispatch: PropTypes.func.isRequired,
+      init: PropTypes.func.isRequired,
       formId: PropTypes.string,
     };
 
@@ -160,6 +163,10 @@ export default formId => Component => {
         newFormId = newFormId(props);
       }
       this.__form = _createForm(newFormId, props.dispatch);
+    }
+
+    componentWillMount() {
+      this.props.init();
     }
 
     render() {
