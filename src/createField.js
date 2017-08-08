@@ -21,7 +21,8 @@ const mapStateToProps = (state, props) => {
   const formId = props.form.getFormId();
   const fieldNames = getFieldNames(props.name);
   const selector = createSelector(state, formId);
-  const form = selector.getForm() || initialState.form;
+  const formState = selector.getForm();
+  const form = (formState && Object.keys(formState).length) || initialState.form;
   const field = selector.getField(fieldNames) || initialState.field;
 
   return {
