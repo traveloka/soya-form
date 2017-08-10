@@ -24,7 +24,6 @@ export default Component => {
       reorderListItem: PropTypes.func.isRequired,
       reorderListItemDec: PropTypes.func.isRequired,
       reorderListItemInc: PropTypes.func.isRequired,
-      init: PropTypes.func.isRequired,
     };
 
     static defaultProps = {
