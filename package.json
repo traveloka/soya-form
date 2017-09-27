@@ -44,7 +44,7 @@
     "marlint": "^6.2.1",
     "react": "^15.6.1",
     "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4",
+    "react-test-renderer": "^16.0.0",
     "rimraf": "^2.6.1"
   },
   "peerDependencies": {
