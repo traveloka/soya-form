@@ -31,7 +31,7 @@ export default Component => {
     };
 
     addListItem = () => {
-      const names = this.props.name;
+      const names = this.props.name.slice();
       if (typeof names[names.length - 1] === 'string') {
         names.push(names.length);
       }

@@ -225,7 +225,7 @@ const formWideValidation = function(data) {
     return {
       isValid: false,
       errorMessages: [
-        {fieldName: 'passwordConfirm', messages: ['Value must be the same as password field.']}
+        {fieldName: 'passwordConfirm', errorMessages: ['Value must be the same as password field.']}
       ]
     };
   }
