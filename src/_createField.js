@@ -53,15 +53,7 @@ export default Component => {
     }
 
     componentWillMount() {
-      const handleValidateAll = this.createHandleValidateAll([
-        ...this.props.changeValidators,
-        ...this.__changeValidators,
-      ], [
-        ...this.props.asyncValidators,
-        ...this.__asyncValidators,
-        ...this.props.submitValidators,
-        ...this.__submitValidators,
-      ]);
+      const handleValidateAll = this.createHandleValidateAll();
       this.__form.regField(this.props.name, handleValidateAll);
     }
 
@@ -110,7 +102,17 @@ export default Component => {
         .catch(this.rejectAsyncValidation);
     };
 
-    createHandleValidateAll = (validators, asyncValidators) => () => {
+    createHandleValidateAll = () => () => {
+      const validators = [
+        ...this.props.changeValidators,
+        ...this.__changeValidators,
+      ];
+      const asyncValidators = [
+        ...this.props.asyncValidators,
+        ...this.__asyncValidators,
+        ...this.props.submitValidators,
+        ...this.__submitValidators,
+      ];
       const errorMessages = createValidate(validators)(this.props.value);
       const createResult = isValid => ({
         isValid,

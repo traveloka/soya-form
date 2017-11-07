@@ -43,9 +43,9 @@ describe('field container', () => {
     props = {
       ...props,
       form: __createForm(fields, fieldNames)(formId, action => action),
-      asyncValidators: new Array(3).fill(jest.fn()),
-      changeValidators: new Array(3).fill(jest.fn()),
-      submitValidators: new Array(3).fill(jest.fn()),
+      asyncValidators: [jest.fn(), jest.fn(), jest.fn()],
+      changeValidators: [jest.fn(), jest.fn(), jest.fn()],
+      submitValidators: [jest.fn(), jest.fn(), jest.fn()],
     };
     renderer.render(<FieldContainer {...props} />);
   });
@@ -56,28 +56,29 @@ describe('field container', () => {
 
   it('should handle register async validators', () => {
     const fieldContainer = renderer.getMountedInstance();
-    fieldContainer.registerAsyncValidators(new Array(3).fill(jest.fn()));
+    fieldContainer.registerAsyncValidators([jest.fn(), jest.fn(), jest.fn()]);
     expect(fieldContainer.__asyncValidators).toMatchSnapshot();
   });
 
   it('should handle register change validators', () => {
     const fieldContainer = renderer.getMountedInstance();
-    fieldContainer.registerChangeValidators(new Array(3).fill(jest.fn()));
+    fieldContainer.registerChangeValidators([jest.fn(), jest.fn(), jest.fn()]);
     expect(fieldContainer.__changeValidators).toMatchSnapshot();
   });
 
   it('should handle register submit validators', () => {
     const fieldContainer = renderer.getMountedInstance();
-    fieldContainer.registerSubmitValidators(new Array(3).fill(jest.fn()));
+    fieldContainer.registerSubmitValidators([jest.fn(), jest.fn(), jest.fn()]);
     expect(fieldContainer.__submitValidators).toMatchSnapshot();
   });
 
-  it('should register change, async, and submit validators on mount', () => {
-    const fieldContainer = renderer.getMountedInstance();
-    fieldContainer.createHandleValidateAll = (...validators) => {
-      expect(validators).toMatchSnapshot();
-    };
-    fieldContainer.componentWillMount();
+  it('should register change, async, and submit validators on mount', async () => {
+    await fields[props.name].validateAll();
+    expect([
+      ...props.asyncValidators,
+      ...props.changeValidators,
+      ...props.submitValidators,
+    ].reduce((sum, { mock }) => sum + mock.calls.length, 0)).toBe(9);
   });
 
   it('should unregister change, async, and submit validators on unmount', () => {
