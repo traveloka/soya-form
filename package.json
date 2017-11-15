@@ -1,6 +1,6 @@
 {
   "name": "soya-form",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "React form library for soya",
   "main": "lib/index.js",
   "license": "MIT",
