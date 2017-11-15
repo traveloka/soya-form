@@ -173,7 +173,7 @@ const createFields = _initialState => (state = _initialState, action) => {
     case INIT_FIELD:
     case SET_DEFAULT_VALUE_ACTION_TYPE:
     case SET_DEFAULT_VALUES_ACTION_TYPE:
-      if (state[fieldName]) {
+      if (state[fieldName] && state[fieldName].value) {
         return state;
       }
       return updateField(state, newAction);
