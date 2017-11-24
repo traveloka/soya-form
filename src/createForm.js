@@ -8,7 +8,11 @@ import createForm from './_createForm';
 const createMapDispatchToProps = formId => (dispatch, props) => ({
   dispatch,
   init() {
-    dispatch(initForm(formId));
+    let newFormId = formId;
+    if (typeof formId === 'function') {
+      newFormId = formId(props);
+    }
+    dispatch(initForm(newFormId));
   },
 });
 
