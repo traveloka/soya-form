@@ -33,7 +33,7 @@ const mapStateToProps = (state, props) => {
     isFieldEnabled: field.isEnabled,
     isValidating: field.isValidating,
     touched: field.touched,
-    value: field.value,
+    value: field.value || '',
   };
 };
 
