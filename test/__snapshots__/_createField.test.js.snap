@@ -40,6 +40,7 @@ exports[`field container should create field component 1`] = `
       "foo",
     ]
   }
+  parseValue={[Function]}
   registerAsyncValidators={[Function]}
   registerChangeValidators={[Function]}
   registerSubmitValidators={[Function]}

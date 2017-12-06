@@ -7,7 +7,42 @@ Create a field component that connects to the form component above.
 - `Component` *(ReactComponent)*: React component to be created as field component.
 
 ### Returns
-*(ReactComponent)*: Field component that passes the following props:
+*(ReactComponent)*
+
+#### Accepts the following props
+- `parseValue: (value) => parsedValue [Optional]`: Parses the value given from the field input component to the type that you want when submitting the form. Example of the use case: parse string to number, timestamp to localized date format, or extract an field from object.
+
+```js
+import React from 'react';
+import { createForm, createField } from 'soya-form';
+
+const Field = createField((props) => <input type="text" value={props.value} />);
+
+class Form extends React.Component {
+  componentDidMount() {
+    this.form.setValue('testField', 3.14);
+  }
+
+  handleSubmit = () => {
+    this.props.form.submit(({ values }) => {
+      console.log(values.testField); // this will return 3;
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <Field name={'testField'} form={props.form} parseValue={(value) => Math.floor(Number(value)) }/>
+        <button onClick={handleSubmit}>Submit</button>
+      </div>
+    );
+  }
+)};
+
+export default createForm('FORM')(Form);
+```
+
+#### Return the following props
 - `value` *(Any)*: Current value of the field.
 ```js
 import { createField } from 'soya-form';

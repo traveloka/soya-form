@@ -42,6 +42,7 @@ export default Component => {
       changeValidators: [],
       asyncValidators: [],
       submitValidators: [],
+      parseValue: value => value,
     };
 
     constructor(props, context) {
@@ -114,11 +115,19 @@ export default Component => {
         ...this.__submitValidators,
       ];
       const errorMessages = createValidate(validators)(this.props.value);
-      const createResult = isValid => ({
-        isValid,
-        value: this.props.value,
-        name: this.props.name,
-      });
+      const createResult = isValid => {
+        const { parseValue } = this.props;
+
+        if (typeof parseValue !== 'function') {
+          throw Error('ParseValue should be function');
+        }
+
+        return {
+          isValid,
+          value: parseValue(this.props.value),
+          name: this.props.name,
+        };
+      };
       if (errorMessages.length > 0) {
         this.mergeFields({ errorMessages });
         return Promise.resolve(createResult(false));
