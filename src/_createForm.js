@@ -22,8 +22,8 @@ import {
 } from './_utils';
 
 export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
-  const __fields = fields;
-  const __fieldNames = fieldNames;
+  const __fields = fields || {};
+  const __fieldNames = fieldNames || [];
   const actionCreators = {
     lockSubmission: () => setFormIsSubmittingState(formId, true),
     unlockSubmission: () => setFormIsSubmittingState(formId, false),
@@ -137,7 +137,7 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
   };
 };
 
-export const _createForm = __createForm({}, []);
+export const _createForm = __createForm();
 
 export default formId => Component => {
   class CreateForm extends React.Component {
