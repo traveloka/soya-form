@@ -34,7 +34,7 @@ const mapStateToProps = (state, props) => {
     isFieldEnabled: field.isEnabled,
     isValidating: field.isValidating,
     touched: field.touched,
-    value: field.value || '',
+    value: typeof(field.value) === 'undefined' || field.value === null ? '' : field.value
   };
 };
 /* eslint-enable complexity */
