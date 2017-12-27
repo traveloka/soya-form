@@ -160,6 +160,7 @@ export default Component => {
       const {
         changeValidators,
         asyncValidators,
+        value,
         ...props
       } = this.props;
       delete props.createHandleChange;
@@ -183,6 +184,7 @@ export default Component => {
       props.registerChangeValidators = this.registerChangeValidators;
       props.registerAsyncValidators = this.registerAsyncValidators;
       props.registerSubmitValidators = this.registerSubmitValidators;
+      props.value = typeof(value) === 'undefined' || value === null ? '' : value;
 
       return <Component {...props} />;
     }
