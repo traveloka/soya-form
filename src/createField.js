@@ -17,7 +17,6 @@ import {
 import withForm from './withForm';
 import _createField from './_createField';
 
-/* eslint-disable complexity */
 const mapStateToProps = (state, props) => {
   const formId = props.form.getFormId();
   const fieldNames = getFieldNames(props.name);
@@ -34,10 +33,9 @@ const mapStateToProps = (state, props) => {
     isFieldEnabled: field.isEnabled,
     isValidating: field.isValidating,
     touched: field.touched,
-    value: typeof(field.value) === 'undefined' || field.value === null ? '' : field.value
+    value: field.value
   };
 };
-/* eslint-enable complexity */
 
 const mapDispatchToProps = (dispatch, props) => ({
   mergeFields: fieldNames => object => {
