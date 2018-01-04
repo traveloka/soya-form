@@ -20,7 +20,7 @@ const mapStateToProps = (state, props) => {
   const fieldNames = getFieldNames(props.name);
   const selector = createSelector(state, props.form.getFormId());
   const length = selector.getLength(fieldNames);
-  const minLength = props.minLength || 1;
+  const minLength = (typeof props.minLength === 'number') && props.minLength >= 0 ? props.minLength : 1;
 
   return {
     length: length >= minLength ? length : minLength,
