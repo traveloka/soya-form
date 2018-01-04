@@ -453,12 +453,37 @@ Object {
       Array [
         "bar",
       ],
+      Array [
+        "foo",
+        "bar",
+      ],
+      Array [
+        "foo",
+        "bar",
+        "bar",
+        0,
+      ],
+      Array [
+        "foo",
+        "bar",
+        0,
+        "bar",
+      ],
     ],
     "fields": Object {
       "bar": Object {
         "validateAll": [Function],
       },
       "foo": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar,0,bar": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar,bar,0": Object {
         "validateAll": [Function],
       },
     },
@@ -468,9 +493,181 @@ Object {
       Array [
         "bar",
       ],
+      Array [
+        "foo",
+        "bar",
+      ],
+      Array [
+        "foo",
+        "bar",
+        "bar",
+        0,
+      ],
+      Array [
+        "foo",
+        "bar",
+        0,
+        "bar",
+      ],
     ],
     "fields": Object {
       "bar": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar,0,bar": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar,bar,0": Object {
+        "validateAll": [Function],
+      },
+    },
+  },
+}
+`;
+
+exports[`form should unregister a field 2`] = `
+Object {
+  "_previous": Object {
+    "fieldNames": Array [
+      Array [
+        "foo",
+      ],
+      Array [
+        "bar",
+      ],
+      Array [
+        "foo",
+        "bar",
+      ],
+      Array [
+        "foo",
+        "bar",
+        "bar",
+        0,
+      ],
+      Array [
+        "foo",
+        "bar",
+        0,
+        "bar",
+      ],
+    ],
+    "fields": Object {
+      "bar": Object {
+        "validateAll": [Function],
+      },
+      "foo": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar,0,bar": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar,bar,0": Object {
+        "validateAll": [Function],
+      },
+    },
+  },
+  "current": Object {
+    "fieldNames": Array [
+      Array [
+        "bar",
+      ],
+      Array [
+        "foo",
+        "bar",
+        "bar",
+        0,
+      ],
+      Array [
+        "foo",
+        "bar",
+        0,
+        "bar",
+      ],
+    ],
+    "fields": Object {
+      "bar": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar,0,bar": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar,bar,0": Object {
+        "validateAll": [Function],
+      },
+    },
+  },
+}
+`;
+
+exports[`form should unregister a field 3`] = `
+Object {
+  "_previous": Object {
+    "fieldNames": Array [
+      Array [
+        "foo",
+      ],
+      Array [
+        "bar",
+      ],
+      Array [
+        "foo",
+        "bar",
+      ],
+      Array [
+        "foo",
+        "bar",
+        "bar",
+        0,
+      ],
+      Array [
+        "foo",
+        "bar",
+        0,
+        "bar",
+      ],
+    ],
+    "fields": Object {
+      "bar": Object {
+        "validateAll": [Function],
+      },
+      "foo": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar,0,bar": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar,bar,0": Object {
+        "validateAll": [Function],
+      },
+    },
+  },
+  "current": Object {
+    "fieldNames": Array [
+      Array [
+        "bar",
+      ],
+      Array [
+        "foo",
+        "bar",
+        "bar",
+        0,
+      ],
+    ],
+    "fields": Object {
+      "bar": Object {
+        "validateAll": [Function],
+      },
+      "foo,bar,bar,0": Object {
         "validateAll": [Function],
       },
     },

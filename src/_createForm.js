@@ -22,8 +22,8 @@ import {
 } from './_utils';
 
 export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
-  const __fields = fields;
-  const __fieldNames = fieldNames;
+  const __fields = fields || {};
+  const __fieldNames = fieldNames || [];
   const actionCreators = {
     lockSubmission: () => setFormIsSubmittingState(formId, true),
     unlockSubmission: () => setFormIsSubmittingState(formId, false),
@@ -67,10 +67,11 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
     unregField: fieldNames => {
       delete __fields[fieldNames];
       const index = __fieldNames.findIndex(
-        __fieldNames => __fieldNames.some(__fieldName => (
-          fieldNames.some(fieldName => __fieldName === fieldName)
-        ))
-      );
+        __fieldNames => (
+          __fieldNames.length === fieldNames.length &&
+          __fieldNames.every((name, i) => name === fieldNames[i])
+        ));
+
       if (index !== -1) {
         __fieldNames.splice(index, 1);
       }
@@ -136,7 +137,7 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
   };
 };
 
-export const _createForm = __createForm({}, []);
+export const _createForm = __createForm();
 
 export default formId => Component => {
   class CreateForm extends React.Component {

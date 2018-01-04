@@ -88,4 +88,31 @@ describe('field container', () => {
       __fieldNames: fieldNames,
     }).toMatchSnapshot();
   });
+
+  it('should return value correctly', async () => {
+    renderer.render(<FieldContainer {...props} value={'my value'} />);
+
+    expect(await fields[props.name].validateAll()).toEqual({
+      isValid: true,
+      name: ['foo'],
+      value: 'my value'
+    });
+  });
+
+  it('should throw error parseValue is not a function', async () => {
+    renderer.render(<FieldContainer {...props} value='test' parseValue={'test'} />);
+    await expect(fields[props.name].validateAll()).rejects.toEqual(expect.any(Error))
+  });
+
+  it('should call parseValue correctly', async () => {
+    const parseValue = jest.fn().mockImplementation(value => value.id);
+    renderer.render(<FieldContainer {...props} value={{ id: '1234', text: 'Testing' }} parseValue={parseValue} />);
+
+    expect(await fields[props.name].validateAll()).toEqual({
+      isValid: true,
+      name: ['foo'],
+      value: '1234'
+    });
+    expect(parseValue).toBeCalled();
+  });
 });

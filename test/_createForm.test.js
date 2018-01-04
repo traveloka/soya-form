@@ -131,19 +131,23 @@ describe('form', () => {
   it('should unregister a field', () => {
     form.regField(['foo'], jest.fn());
     form.regField(['bar'], jest.fn());
+    form.regField(['foo', 'bar'], jest.fn());
+    form.regField(['foo', 'bar', 'bar', 0], jest.fn());
+    form.regField(['foo', 'bar', 0, 'bar'], jest.fn());
+
     const _previous = {
       fields: { ...fields },
       fieldNames: [...fieldNames],
     };
     form.unregField(['foo']);
     form.unregField(['foo']);
-    expect({
-      _previous,
-      current: {
-        fields,
-        fieldNames,
-      },
-    }).toMatchSnapshot();
+    expect({ _previous, current: { fields, fieldNames }}).toMatchSnapshot();
+
+    form.unregField(['foo', 'bar']);
+    expect({ _previous, current: { fields, fieldNames }}).toMatchSnapshot();
+
+    form.unregField(['foo', 'bar', 0, 'bar']);
+    expect({ _previous, current: { fields, fieldNames }}).toMatchSnapshot();
   });
 
   it('should validate all registered fields', async () => {
