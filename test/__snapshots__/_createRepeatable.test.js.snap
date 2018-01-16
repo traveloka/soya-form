@@ -6,31 +6,31 @@ exports[`repeatable container should create 3 repeatable components 1`] = `
     addListItem={[Function]}
     form={
       Object {
-        "addErrors": [Function],
-        "clearErrors": [Function],
-        "clearForm": [Function],
-        "disable": [Function],
-        "disableField": [Function],
-        "disableFields": [Function],
-        "enable": [Function],
-        "enableField": [Function],
-        "enableFields": [Function],
-        "getFormId": [Function],
-        "lockSubmission": [Function],
-        "regField": [Function],
-        "setDefaultValue": [Function],
-        "setDefaultValues": [Function],
-        "setErrors": [Function],
-        "setValue": [Function],
-        "setValues": [Function],
-        "submit": [Function],
-        "unlockSubmission": [Function],
-        "unregField": [Function],
-        "validateAll": [Function],
+        "addErrors": [MockFunction],
+        "clearErrors": [MockFunction],
+        "clearForm": [MockFunction],
+        "disable": [MockFunction],
+        "disableField": [MockFunction],
+        "disableFields": [MockFunction],
+        "enable": [MockFunction],
+        "enableField": [MockFunction],
+        "enableFields": [MockFunction],
+        "getFormId": [MockFunction],
+        "lockSubmission": [MockFunction],
+        "regField": [MockFunction],
+        "setDefaultValue": [MockFunction],
+        "setDefaultValues": [MockFunction],
+        "setErrors": [MockFunction],
+        "setValue": [MockFunction],
+        "setValues": [MockFunction],
+        "submit": [MockFunction],
+        "unlockSubmission": [MockFunction],
+        "unregField": [MockFunction],
+        "validateAll": [MockFunction],
       }
     }
     index={0}
-    init={[Function]}
+    init={[MockFunction]}
     length={3}
     minLength={0}
     name={[Function]}
@@ -44,31 +44,31 @@ exports[`repeatable container should create 3 repeatable components 1`] = `
     addListItem={[Function]}
     form={
       Object {
-        "addErrors": [Function],
-        "clearErrors": [Function],
-        "clearForm": [Function],
-        "disable": [Function],
-        "disableField": [Function],
-        "disableFields": [Function],
-        "enable": [Function],
-        "enableField": [Function],
-        "enableFields": [Function],
-        "getFormId": [Function],
-        "lockSubmission": [Function],
-        "regField": [Function],
-        "setDefaultValue": [Function],
-        "setDefaultValues": [Function],
-        "setErrors": [Function],
-        "setValue": [Function],
-        "setValues": [Function],
-        "submit": [Function],
-        "unlockSubmission": [Function],
-        "unregField": [Function],
-        "validateAll": [Function],
+        "addErrors": [MockFunction],
+        "clearErrors": [MockFunction],
+        "clearForm": [MockFunction],
+        "disable": [MockFunction],
+        "disableField": [MockFunction],
+        "disableFields": [MockFunction],
+        "enable": [MockFunction],
+        "enableField": [MockFunction],
+        "enableFields": [MockFunction],
+        "getFormId": [MockFunction],
+        "lockSubmission": [MockFunction],
+        "regField": [MockFunction],
+        "setDefaultValue": [MockFunction],
+        "setDefaultValues": [MockFunction],
+        "setErrors": [MockFunction],
+        "setValue": [MockFunction],
+        "setValues": [MockFunction],
+        "submit": [MockFunction],
+        "unlockSubmission": [MockFunction],
+        "unregField": [MockFunction],
+        "validateAll": [MockFunction],
       }
     }
     index={1}
-    init={[Function]}
+    init={[MockFunction]}
     length={3}
     minLength={0}
     name={[Function]}
@@ -82,31 +82,31 @@ exports[`repeatable container should create 3 repeatable components 1`] = `
     addListItem={[Function]}
     form={
       Object {
-        "addErrors": [Function],
-        "clearErrors": [Function],
-        "clearForm": [Function],
-        "disable": [Function],
-        "disableField": [Function],
-        "disableFields": [Function],
-        "enable": [Function],
-        "enableField": [Function],
-        "enableFields": [Function],
-        "getFormId": [Function],
-        "lockSubmission": [Function],
-        "regField": [Function],
-        "setDefaultValue": [Function],
-        "setDefaultValues": [Function],
-        "setErrors": [Function],
-        "setValue": [Function],
-        "setValues": [Function],
-        "submit": [Function],
-        "unlockSubmission": [Function],
-        "unregField": [Function],
-        "validateAll": [Function],
+        "addErrors": [MockFunction],
+        "clearErrors": [MockFunction],
+        "clearForm": [MockFunction],
+        "disable": [MockFunction],
+        "disableField": [MockFunction],
+        "disableFields": [MockFunction],
+        "enable": [MockFunction],
+        "enableField": [MockFunction],
+        "enableFields": [MockFunction],
+        "getFormId": [MockFunction],
+        "lockSubmission": [MockFunction],
+        "regField": [MockFunction],
+        "setDefaultValue": [MockFunction],
+        "setDefaultValues": [MockFunction],
+        "setErrors": [MockFunction],
+        "setValue": [MockFunction],
+        "setValues": [MockFunction],
+        "submit": [MockFunction],
+        "unlockSubmission": [MockFunction],
+        "unregField": [MockFunction],
+        "validateAll": [MockFunction],
       }
     }
     index={2}
-    init={[Function]}
+    init={[MockFunction]}
     length={3}
     minLength={0}
     name={[Function]}
