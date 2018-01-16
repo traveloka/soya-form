@@ -29,7 +29,7 @@ exports[`field container should create field component 1`] = `
     }
   }
   handleAsyncValidation={[Function]}
-  handleChange={[Function]}
+  handleChange={[MockFunction]}
   isDisabled={false}
   isFieldEnabled={false}
   isFormEnabled={false}
@@ -51,25 +51,25 @@ exports[`field container should create field component 1`] = `
 
 exports[`field container should handle register async validators 1`] = `
 Array [
-  [Function],
-  [Function],
-  [Function],
+  [MockFunction],
+  [MockFunction],
+  [MockFunction],
 ]
 `;
 
 exports[`field container should handle register change validators 1`] = `
 Array [
-  [Function],
-  [Function],
-  [Function],
+  [MockFunction],
+  [MockFunction],
+  [MockFunction],
 ]
 `;
 
 exports[`field container should handle register submit validators 1`] = `
 Array [
-  [Function],
-  [Function],
-  [Function],
+  [MockFunction],
+  [MockFunction],
+  [MockFunction],
 ]
 `;
 
