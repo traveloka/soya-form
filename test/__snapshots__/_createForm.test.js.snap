@@ -389,7 +389,7 @@ Object {
   ],
   "fields": Object {
     "foo": Object {
-      "validateAll": [Function],
+      "validateAll": [MockFunction],
     },
   },
 }
@@ -472,19 +472,19 @@ Object {
     ],
     "fields": Object {
       "bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar,0,bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar,bar,0": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
     },
   },
@@ -512,16 +512,16 @@ Object {
     ],
     "fields": Object {
       "bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar,0,bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar,bar,0": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
     },
   },
@@ -557,19 +557,19 @@ Object {
     ],
     "fields": Object {
       "bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar,0,bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar,bar,0": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
     },
   },
@@ -593,13 +593,13 @@ Object {
     ],
     "fields": Object {
       "bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar,0,bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar,bar,0": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
     },
   },
@@ -635,19 +635,19 @@ Object {
     ],
     "fields": Object {
       "bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar,0,bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar,bar,0": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
     },
   },
@@ -665,10 +665,10 @@ Object {
     ],
     "fields": Object {
       "bar": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
       "foo,bar,bar,0": Object {
-        "validateAll": [Function],
+        "validateAll": [MockFunction],
       },
     },
   },
