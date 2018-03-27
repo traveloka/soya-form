@@ -30,6 +30,7 @@
     "redux"
   ],
   "dependencies": {
+    "hoist-non-react-statics": "^2.5.0",
     "prop-types": "^15.5.10"
   },
   "devDependencies": {

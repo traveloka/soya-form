@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import hoistStatics from 'hoist-non-react-statics';
 import {
   addErrorMessages,
   clear,
@@ -139,44 +140,41 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
 
 export const _createForm = __createForm();
 
-export default formId => Component => {
-  class CreateForm extends React.Component {
-    static displayName = getDisplayName('CreateForm', Component);
+export default formId => Component => hoistStatics(class extends React.Component {
+  static displayName = getDisplayName('CreateForm', Component);
 
-    static childContextTypes = {
-      [CONTEXT_NAME]: formShape.isRequired,
-    };
+  static childContextTypes = {
+    [CONTEXT_NAME]: formShape.isRequired,
+  };
 
-    static propTypes = {
-      dispatch: PropTypes.func.isRequired,
-      init: PropTypes.func.isRequired,
-      formId: PropTypes.string,
-    };
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    init: PropTypes.func.isRequired,
+    formId: PropTypes.string,
+  };
 
-    getChildContext = () => ({
-      [CONTEXT_NAME]: this.__form,
-    });
+  getChildContext = () => ({
+    [CONTEXT_NAME]: this.__form,
+  });
 
-    constructor(props, context) {
-      super(props, context);
-      let newFormId = formId || props.formId;
-      if (typeof newFormId === 'function') {
-        newFormId = newFormId(props);
-      }
-      this.__form = _createForm(newFormId, props.dispatch);
+  constructor(props, context) {
+    super(props, context);
+    let newFormId = formId || props.formId;
+    if (typeof newFormId === 'function') {
+      newFormId = newFormId(props);
     }
-
-    componentWillMount() {
-      this.props.init();
-    }
-
-    render() {
-      const props = { ...this.props };
-      delete props.dispatch;
-      delete props.formId;
-      props.form = this.__form;
-      return <Component {...props} />;
-    }
+    this.__form = _createForm(newFormId, props.dispatch);
   }
-  return CreateForm;
-};
+
+  componentWillMount() {
+    this.props.init();
+  }
+
+  render() {
+    const props = { ...this.props };
+    delete props.dispatch;
+    delete props.formId;
+    props.form = this.__form;
+    return <Component {...props} />;
+  }
+}, Component);
