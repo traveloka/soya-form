@@ -3,6 +3,7 @@ import createField from './createField';
 import createRepeatable from './createRepeatable';
 import createSelector from './_selectors';
 import withForm from './withForm';
+import withFormValues from './withFormValues';
 
 export {
   createForm,
@@ -10,4 +11,5 @@ export {
   createRepeatable,
   createSelector,
   withForm,
+  withFormValues,
 };
