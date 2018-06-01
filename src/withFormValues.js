@@ -34,13 +34,13 @@ const write = (obj, keys, v) => {
   if (keys.length === 1) {
     obj[keys[0]] = v;
   } else {
-    writeKey(obj, keys, v);
+    writeObjectKey(obj, keys, v);
   }
 
   return obj;
 };
 
-const writeKey = (obj, keys, v) => {
+const writeObjectKey = (obj, keys, v) => {
   const [key, ...remainingKeys] = keys;
   const nextKey = remainingKeys[0];
   const nextRemainingKeys = remainingKeys.slice(1);
