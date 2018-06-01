@@ -34,28 +34,32 @@ const write = (obj, keys, v) => {
   if (keys.length === 1) {
     obj[keys[0]] = v;
   } else {
-    const [key, ...remainingKeys] = keys;
-    const nextKey = remainingKeys[0];
-    const nextRemainingKeys = remainingKeys.slice(1);
-
-    if (typeof nextKey === "number") {
-      // create array
-      const expectedSize = nextKey + 1; // because js index start from 0
-      initArrayIfnotExist(obj, key, expectedSize);
-
-      // recursively write the object
-      obj[key][nextKey] = write(obj[key][nextKey], nextRemainingKeys, v);
-    } else {
-      // recursively write the object
-      obj[key] = write(
-        typeof obj[key] === "undefined" ? {} : obj[key],
-        remainingKeys,
-        v
-      );
-    }
+    writeKey(obj, keys, v);
   }
 
   return obj;
+};
+
+const writeKey = (obj, keys, v) => {
+  const [key, ...remainingKeys] = keys;
+  const nextKey = remainingKeys[0];
+  const nextRemainingKeys = remainingKeys.slice(1);
+
+  if (typeof nextKey === "number") {
+    // create array
+    const expectedSize = nextKey + 1; // because js index start from 0
+    initArrayIfnotExist(obj, key, expectedSize);
+
+    // recursively write the object
+    obj[key][nextKey] = write(obj[key][nextKey], nextRemainingKeys, v);
+  } else {
+    // recursively write the object
+    obj[key] = write(
+      typeof obj[key] === "undefined" ? {} : obj[key],
+      remainingKeys,
+      v
+    );
+  }
 };
 
 export default (FORM_ID, fieldNames) => Component => {
