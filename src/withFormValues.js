@@ -11,6 +11,22 @@ import { getDisplayName } from './_utils';
  * read it more here : https://gist.github.com/fawwaz/b037a105e41fa8ed7292b324abb07f42
  */
 
+const initArrayIfnotExist = (obj, key, expectedSize) => {
+  if (!obj[key]) {
+    obj[key] = [];
+  }
+
+  // Fill empty index with empty object
+  if (obj[key].length < expectedSize) {
+    const delta = expectedSize - obj[key].length;
+    for (let i = 0; i < delta; i++) {
+      obj[key].push({});
+    }
+  }
+
+  return obj;
+};
+
 const write = (obj, keys, v) => {
   if (keys.length === 0) {
     return v;
@@ -24,17 +40,8 @@ const write = (obj, keys, v) => {
 
     if (typeof nextKey === "number") {
       // create array
-      if (!obj[key]) {
-        obj[key] = [];
-      }
-
-      // Fill empty index with empty object
-      if (obj[key].length < nextKey + 1) {
-        const delta = nextKey + 1 - obj[key].length;
-        for (let i = 0; i < delta; i++) {
-          obj[key].push({});
-        }
-      }
+      const expectedSize = nextKey + 1; // because js index start from 0
+      initArrayIfnotExist(obj, key, expectedSize);
 
       // recursively write the object
       obj[key][nextKey] = write(obj[key][nextKey], nextRemainingKeys, v);
@@ -52,7 +59,7 @@ const write = (obj, keys, v) => {
 };
 
 export default (FORM_ID, fieldNames) => Component => {
-  const mapStateToProps = (state) => {
+  const mapStateToProps = state => {
     let formValues = {};
     if (state[STATE_NAME]) {
       const soyaFormSelector = createSoyaFormSelector(state, FORM_ID);
