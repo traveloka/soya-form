@@ -70,7 +70,7 @@ export default (FORM_ID, fieldNames) => Component => {
       fieldNames.forEach(fieldName => {
         const fieldPath = Array.isArray(fieldName) ? fieldName : [fieldName];
         const value = soyaFormSelector.getFieldValue(fieldPath);
-        formValues = write(formValues, fieldName, value);
+        formValues = write(formValues, fieldPath, value);
       });
     }
     return {
