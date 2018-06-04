@@ -68,7 +68,8 @@ export default (FORM_ID, fieldNames) => Component => {
     if (state[STATE_NAME]) {
       const soyaFormSelector = createSoyaFormSelector(state, FORM_ID);
       fieldNames.forEach(fieldName => {
-        const value = soyaFormSelector.getFieldValue(fieldName);
+        const fieldPath = Array.isArray(fieldName) ? fieldName : [fieldName];
+        const value = soyaFormSelector.getFieldValue(fieldPath);
         formValues = write(formValues, fieldName, value);
       });
     }
