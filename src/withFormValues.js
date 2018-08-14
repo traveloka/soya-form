@@ -1,92 +1,34 @@
-import React from 'react';
-import hoistStatics from 'hoist-non-react-statics';
-import { STATE_NAME } from './_constants';
-import createSoyaFormSelector from './_selectors';
-import { connect } from 'react-redux';
-import { getDisplayName } from './_utils';
-
-/**
- * Utilities
- * Write: recursively write a value according `path to value` array
- * read it more here : https://gist.github.com/fawwaz/b037a105e41fa8ed7292b324abb07f42
- */
-
-const initArrayIfnotExist = (obj, key, expectedSize) => {
-  if (!obj[key]) {
-    obj[key] = [];
-  }
-
-  // Fill empty index with empty object
-  if (obj[key].length < expectedSize) {
-    const delta = expectedSize - obj[key].length;
-    for (let i = 0; i < delta; i++) {
-      obj[key].push({});
-    }
-  }
-
-  return obj;
-};
-
-const write = (obj, keys, v) => {
-  if (keys.length === 0) {
-    return v;
-  }
-  if (keys.length === 1) {
-    obj[keys[0]] = v;
-  } else {
-    writeObjectKey(obj, keys, v);
-  }
-
-  return obj;
-};
-
-const writeObjectKey = (obj, keys, v) => {
-  const [key, ...remainingKeys] = keys;
-  const nextKey = remainingKeys[0];
-  const nextRemainingKeys = remainingKeys.slice(1);
-
-  if (typeof nextKey === "number") {
-    // create array
-    const expectedSize = nextKey + 1; // because js index start from 0
-    initArrayIfnotExist(obj, key, expectedSize);
-
-    // recursively write the object
-    obj[key][nextKey] = write(obj[key][nextKey], nextRemainingKeys, v);
-  } else {
-    // recursively write the object
-    obj[key] = write(
-      typeof obj[key] === "undefined" ? {} : obj[key],
-      remainingKeys,
-      v
-    );
-  }
-};
+import { set } from "lodash";
+import React from "react";
+import { connect } from "react-redux";
+import { STATE_NAME } from "./_constants";
+import createSoyaFormSelector from "./_selectors";
+import { getDisplayName } from "./_utils";
 
 export default (FORM_ID, fieldNames) => Component => {
   const mapStateToProps = state => {
     let formValues = {};
     if (state[STATE_NAME]) {
       const soyaFormSelector = createSoyaFormSelector(state, FORM_ID);
-      fieldNames.forEach(fieldName => {
+      formValues = fieldNames.reduce((formValues, fieldName) => {
         const fieldPath = Array.isArray(fieldName) ? fieldName : [fieldName];
         const value = soyaFormSelector.getFieldValue(fieldPath);
-        formValues = write(formValues, fieldPath, value);
-      });
+        set(formValues, fieldPath, value);
+        return formValues;
+      }, {});
     }
-    return {
-      formValues,
-    };
+    return { formValues };
   };
 
-  return connect(mapStateToProps)(hoistStatics(class extends React.Component {
-    static displayName = getDisplayName('WithFormValues', Component);
+  return connect(mapStateToProps)(
+    class extends React.Component {
+      static displayName = getDisplayName("WithFormValues", Component);
 
-    render() {
-      return (
-        <Component
-          {...this.props}
-        />
-      );
+      render() {
+        const { formValues, ...props } = this.props;
+        delete props.dispatch;
+        return <Component formValues={formValues} {...props} />;
+      }
     }
-  }, Component));
+  );
 };

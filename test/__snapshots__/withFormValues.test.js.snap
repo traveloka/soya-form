@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WithFormValues should have formValues prop 1`] = `
+Array [
+  Object {
+    "formValues": Object {
+      "firstName": null,
+      "lastName": null,
+    },
+  },
+  Object {
+    "formValues": Object {
+      "address": Object {
+        "streetName": null,
+      },
+      "experiences": Array [
+        Object {
+          "title": null,
+        },
+      ],
+      "firstName": null,
+    },
+  },
+]
+`;
