@@ -24,10 +24,12 @@ export default Component => hoistStatics(class extends React.Component {
     reorderListItem: PropTypes.func.isRequired,
     reorderListItemDec: PropTypes.func.isRequired,
     reorderListItemInc: PropTypes.func.isRequired,
+    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   };
 
   static defaultProps = {
     minLength: 0,
+    tag: 'div'
   };
 
   addListItem = () => {
@@ -47,11 +49,16 @@ export default Component => hoistStatics(class extends React.Component {
   reorderListItemInc = (index, amount) => this.props.reorderListItemInc(this.props.name)(index, amount);
 
   render() {
+    const {
+      tag: Tag,
+      ...props
+    } = this.props;
+
     return (
-      <div>
+      <Tag>
         {new Array(this.props.length).fill(null).map((_, index) => (
           <Component
-            {...this.props}
+            {...props}
             index={index}
             key={index}
             name={createGetName(this.props.name, index)}
@@ -63,7 +70,7 @@ export default Component => hoistStatics(class extends React.Component {
             reorderListItemInc={this.reorderListItemInc}
           />
         ))}
-      </div>
+      </Tag>
     );
   }
 }, Component);
