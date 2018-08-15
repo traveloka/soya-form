@@ -4685,8 +4685,8 @@ source-map@~0.5.6:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
 soya-next@^0.5.10:
-  version "0.5.10"
-  resolved "https://registry.yarnpkg.com/soya-next/-/soya-next-0.5.10.tgz#cb7a46b23aca362e4ac7cd74edc91187d8ab8cf4"
+  version "0.5.11"
+  resolved "https://registry.yarnpkg.com/soya-next/-/soya-next-0.5.11.tgz#ae876bc96128a19e37e737bfa2676214be67ff52"
   dependencies:
     compression "^1.6.2"
     hoist-non-react-statics "^2.2.0"
