@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WithFormValues should have formValues prop 1`] = `
+exports[`withFormValues should have formValues prop 1`] = `
 Array [
   Object {
     "formValues": Object {

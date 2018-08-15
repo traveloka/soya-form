@@ -1,20 +1,13 @@
 import React from "react";
-import TestUtils from "react-dom/test-utils";
-import TestRenderer from "react-test-renderer";
 import { Provider } from "react-redux";
+import TestRenderer from "react-test-renderer";
 import { createConfigureStore } from "soya-next/redux";
-import {
-  createField,
-  createForm,
-  withFormValues,
-  createRepeatable
-} from "../src";
-import { CONTEXT_NAME } from "../src/_constants";
+import { createField, createForm, createRepeatable, withFormValues } from "../src";
 
 let store;
 const configureStore = createConfigureStore();
 
-describe("WithFormValues", () => {
+describe("withFormValues", () => {
   beforeEach(() => {
     store = configureStore();
   });
