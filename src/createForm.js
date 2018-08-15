@@ -1,6 +1,6 @@
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import applyReducers from 'soya-next/lib/redux/applyReducers';
+import { applyReducers } from 'soya-next/redux';
 import { initForm } from './_actions';
 import reducers from './_reducers';
 import createForm from './_createForm';

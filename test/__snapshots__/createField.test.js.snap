@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createField should validate on input change 1`] = `
+Object {
+  "errorMessages": Array [
+    "Required",
+    "Min length is 5",
+  ],
+  "isEnabled": true,
+  "isValidating": false,
+  "touched": true,
+  "value": "bar",
+}
+`;
