@@ -48,21 +48,21 @@ export const transformArray = (operand, parentKeys) => {
   }, []);
 };
 
-export const transform = (object, parentKeys) => {
-  return Object.keys(object).reduce((carry, key) => {
+export const transform = serverResponse => {
+  return Object.keys(serverResponse).reduce((carry, key) => {
     // primitive value see: https://github.com/lodash/lodash/issues/1406
-    if (!isObject(object[key])) {
-      return [...carry, { fieldName: key, value: object[key] }];
+    if (!isObject(serverResponse[key])) {
+      return [...carry, { fieldName: key, value: serverResponse[key] }];
     }
 
     // Array value
-    if (isArray(object[key])) {
-      return [...carry, ...transformArray(object[key], [key])];
+    if (isArray(serverResponse[key])) {
+      return [...carry, ...transformArray(serverResponse[key], [key])];
     }
 
     // Object value
-    if (isPlainObject(object[key])) {
-      return [...carry, ...transformObject(object[key], [key])];
+    if (isPlainObject(serverResponse[key])) {
+      return [...carry, ...transformObject(serverResponse[key], [key])];
     }
 
     return carry;
