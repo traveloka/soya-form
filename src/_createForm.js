@@ -22,7 +22,7 @@ import {
   throwAndLogError,
 } from './_utils';
 
-export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
+export const __createForm = (fields, fieldNames) => (formId, dispatch, preventRemoveField) => {
   const __fields = fields || {};
   const __fieldNames = fieldNames || [];
   const actionCreators = {
@@ -66,15 +66,17 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
       __fieldNames.push(fieldNames);
     },
     unregField: fieldNames => {
-      delete __fields[fieldNames];
-      const index = __fieldNames.findIndex(
-        __fieldNames => (
-          __fieldNames.length === fieldNames.length &&
-          __fieldNames.every((name, i) => name === fieldNames[i])
-        ));
+      if (!preventRemoveField) {
+        delete __fields[fieldNames];
+        const index = __fieldNames.findIndex(
+          __fieldNames => (
+            __fieldNames.length === fieldNames.length &&
+            __fieldNames.every((name, i) => name === fieldNames[i])
+          ));
 
-      if (index !== -1) {
-        __fieldNames.splice(index, 1);
+        if (index !== -1) {
+          __fieldNames.splice(index, 1);
+        }
       }
     },
     validateAll: () => {
@@ -140,7 +142,7 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
 
 export const _createForm = __createForm();
 
-export default formId => Component => hoistStatics(class extends React.Component {
+export default (formId, preventRemoveField) => Component => hoistStatics(class extends React.Component {
   static displayName = getDisplayName('CreateForm', Component);
 
   static childContextTypes = {
@@ -163,7 +165,7 @@ export default formId => Component => hoistStatics(class extends React.Component
     if (typeof newFormId === 'function') {
       newFormId = newFormId(props);
     }
-    this.__form = _createForm(newFormId, props.dispatch);
+    this.__form = _createForm(newFormId, props.dispatch, preventRemoveField);
   }
 
   componentWillMount() {

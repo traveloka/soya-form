@@ -35,6 +35,7 @@ export default Component => hoistStatics(class extends React.Component {
     addErrorMessages: PropTypes.func.isRequired,
     mergeFields: PropTypes.func.isRequired,
     toggleLock: PropTypes.func.isRequired,
+    preventRemoveField: PropTypes.bool
   };
 
   static defaultProps = {
@@ -59,7 +60,9 @@ export default Component => hoistStatics(class extends React.Component {
   }
 
   componentWillUnmount() {
-    this.__form.unregField(this.props.name);
+    if (!this.props.preventRemoveField) {
+      this.__form.unregField(this.props.name);
+    }
   }
 
   addErrorMessages = errorMessages => this.props.addErrorMessages(this.props.name)(errorMessages);
