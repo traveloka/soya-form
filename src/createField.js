@@ -34,7 +34,7 @@ const mapStateToProps = (state, props) => {
     isFieldEnabled: field.isEnabled,
     isValidating: field.isValidating,
     touched: field.touched,
-    value: typeof(field.value) === 'undefined' || field.value === null ? '' : field.value
+    value: typeof (field.value) === 'undefined' || field.value === null ? '' : field.value
   };
 };
 /* eslint-enable complexity */
@@ -60,20 +60,21 @@ const mapDispatchToProps = (dispatch, props) => ({
   },
   createHandleChange: fieldNames => validators => value => {
     const formId = props.form.getFormId();
-    const errorMessages = createValidate(validators)(value);
+    const newValue = props.normalize && props.normalize(value) || value;
+    const errorMessages = createValidate(validators)(newValue);
     if (errorMessages.length === 0) {
-      dispatch(setValue(formId, fieldNames, value));
+      dispatch(setValue(formId, fieldNames, newValue));
     } else {
       dispatch(mergeFields(formId, [{
         fieldName: fieldNames,
         object: {
           errorMessages,
-          value,
+          value: newValue,
           touched: true,
         },
       }]));
     }
-    props.changeHandlers && props.changeHandlers.forEach(changeHandler => changeHandler(value));
+    props.changeHandlers && props.changeHandlers.forEach(changeHandler => changeHandler(newValue));
   },
 });
 
