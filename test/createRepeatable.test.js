@@ -2,7 +2,12 @@ import React from "react";
 import { Provider } from "react-redux";
 import TestRenderer from "react-test-renderer";
 import { createConfigureStore } from "soya-next/redux";
-import { createField, createForm, createRepeatable } from "../src";
+import {
+  createField,
+  createForm,
+  createRepeatable,
+  createRepeatableAction
+} from "../src";
 
 let store;
 const configureStore = createConfigureStore();
@@ -51,6 +56,27 @@ describe("createRepeatable", () => {
   const FORM_ID = "mockForm";
   const MockForm = createForm(FORM_ID)(({ children }) => (
     <form>
+      <ArrayField name="experiences" minLength={3} />
+    </form>
+  ));
+
+  const ArrayFieldAction = createRepeatableAction(({ name, addListItem }) => (
+    <button
+      onClick={() => {
+        const names = name.slice();
+        if (typeof names[names.length - 1] === "string") {
+          names.push(names.length);
+        }
+        addListItem(names)();
+      }}
+    >
+      Add Item
+    </button>
+  ));
+
+  const MockForm2 = createForm(FORM_ID)(({ children }) => (
+    <form>
+      <ArrayFieldAction name="experiences" />
       <ArrayField name="experiences" minLength={3} />
     </form>
   ));
@@ -123,6 +149,15 @@ describe("createRepeatable", () => {
     adds[0].props.onClick();
     const removes = root.findAllByType(Remove);
     removes[2].props.onClick();
+    expect(renderer).toMatchSnapshot();
+  });
+
+  it("should render repeatable action component", () => {
+    const renderer = TestRenderer.create(
+      <Provider store={store}>
+        <MockForm2 />
+      </Provider>
+    );
     expect(renderer).toMatchSnapshot();
   });
 });
