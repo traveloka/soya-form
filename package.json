@@ -40,7 +40,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "coveralls": "^3.0.0",
-    "husky": "^0.14.0",
+    "husky": "^3.0.3",
     "jest": "^22.1.1",
     "lint-staged": "^7.1.3",
     "marlint": "^6.2.1",
