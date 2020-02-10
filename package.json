@@ -50,7 +50,7 @@
     "react-test-renderer": "^16.0.0",
     "react-text-mask": "^5.4.3",
     "redux": "^4.0.0",
-    "rimraf": "^2.6.1",
+    "rimraf": "^3.0.2",
     "soya-next": "^0.5.10"
   },
   "peerDependencies": {
