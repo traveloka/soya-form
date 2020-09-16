@@ -24,6 +24,19 @@ describe('form container', () => {
     const form = TestUtils.findRenderedComponentWithType(tree, Form);
     expect(form.props.form.getFormId()).toBe(formId);
   });
+
+  it('should receive the formCustom in the props', () => {
+    const FormContainer = _createForm(formId, "formCustom")(Form);
+    const tree = TestUtils.renderIntoDocument(
+      <FormContainer
+        dispatch={dispatch}
+        formId={formId}
+        init={jest.fn()}
+      />
+    );
+    const form = TestUtils.findRenderedComponentWithType(tree, Form);
+    expect(form.props.formCustom.getFormId()).toBe(formId);
+  });
 });
 
 describe('form', () => {

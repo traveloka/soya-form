@@ -16,8 +16,8 @@ const createMapDispatchToProps = formId => (dispatch, props) => ({
   },
 });
 
-export default formId => compose(
+export default (formId, propertyName = "form") => compose(
   applyReducers(reducers),
   connect(null, createMapDispatchToProps(formId)),
-  createForm(formId)
+  createForm(formId, propertyName)
 );
