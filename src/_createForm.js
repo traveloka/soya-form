@@ -140,7 +140,7 @@ export const __createForm = (fields, fieldNames) => (formId, dispatch) => {
 
 export const _createForm = __createForm();
 
-export default formId => Component => hoistStatics(class extends React.Component {
+export default (formId, propertyName = "form") => Component => hoistStatics(class extends React.Component {
   static displayName = getDisplayName('CreateForm', Component);
 
   static childContextTypes = {
@@ -174,7 +174,7 @@ export default formId => Component => hoistStatics(class extends React.Component
     const props = { ...this.props };
     delete props.dispatch;
     delete props.formId;
-    props.form = this.__form;
+    props[propertyName] = this.__form;
     return <Component {...props} />;
   }
 }, Component);
